@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events & Milestones — Slim Agbahoungba</title>
+  <meta name="description" content="Events, conferences, and professional milestones of Slim Zéférino S. Agbahoungba">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6.5.1 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <style>
+    /* ========== EVENTS PAGE SPECIFIC STYLES ========== */
+
+    .events-section {
+      padding-top: 140px;
+    }
+
+    .section-label {
+      display: inline-block;
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-header {
+      margin-bottom: 3.5rem;
+    }
+
+    .section-header h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 0;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+
+    .gradient-text {
+      background: var(--gradient-accent);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Filter Tabs */
+    .filter-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 3rem;
+    }
+
+    .filter-tab {
+      padding: 0.65rem 1.5rem;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text-2);
+      border-radius: 24px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s var(--ease);
+      font-family: var(--font-sans);
+    }
+
+    .filter-tab:hover {
+      border-color: var(--border-accent);
+      color: var(--accent-light);
+      background: rgba(108, 92, 231, 0.08);
+    }
+
+    .filter-tab.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+
+    /* Timeline Container */
+    .timeline-container {
+      position: relative;
+      padding-top: 2rem;
+    }
+
+    .timeline-track {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    /* Timeline Line (Vertical Gradient) */
+    .timeline-track::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, var(--accent) 0%, var(--accent-cyan) 50%, transparent 100%);
+      transform: translateX(-50%);
+      display: none;
+    }
+
+    /* Desktop Two-Column Layout */
+    @media (min-width: 1024px) {
+      .timeline-track::before {
+        display: block;
+      }
+
+      .timeline-item:nth-child(odd) {
+        margin-left: 0;
+        margin-right: auto;
+        max-width: calc(50% - 1.5rem);
+        text-align: right;
+      }
+
+      .timeline-item:nth-child(odd)::after {
+        content: '';
+        position: absolute;
+        right: -2rem;
+        top: 2rem;
+        width: 1.5rem;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--accent));
+      }
+
+      .timeline-item:nth-child(even) {
+        margin-left: auto;
+        margin-right: 0;
+        max-width: calc(50% - 1.5rem);
+        text-align: left;
+      }
+
+      .timeline-item:nth-child(even)::before {
+        content: '';
+        position: absolute;
+        left: -2rem;
+        top: 2rem;
+        width: 1.5rem;
+        height: 2px;
+        background: linear-gradient(270deg, transparent, var(--accent));
+      }
+    }
+
+    /* Timeline Item Card */
+    .timeline-item {
+      position: relative;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      transition: all 0.3s var(--ease);
+      cursor: pointer;
+    }
+
+    .timeline-item:hover {
+      border-color: var(--border-accent);
+      background: var(--bg-card-hover);
+      box-shadow: var(--shadow-card);
+      transform: translateY(-4px);
+    }
+
+    /* Timeline Dot */
+    .timeline-dot {
+      position: absolute;
+      left: 50%;
+      top: 2rem;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 3px solid var(--bg-0);
+      box-shadow: 0 0 0 2px var(--accent), var(--glow-accent);
+      transform: translateX(-50%);
+      z-index: 2;
+    }
+
+    /* Mobile: Hide dots and center */
+    @media (max-width: 1023px) {
+      .timeline-dot {
+        display: none;
+      }
+
+      .timeline-item {
+        padding-left: 3rem;
+      }
+
+      .timeline-item::after,
+      .timeline-item::before {
+        display: none !important;
+      }
+
+      .timeline-item .timeline-dot-mobile {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 2rem;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: var(--accent);
+        border: 3px solid var(--bg-0);
+        box-shadow: 0 0 0 2px var(--accent), var(--glow-accent);
+      }
+    }
+
+    /* Timeline Content */
+    .timeline-content {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Date Badge */
+    .timeline-date {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--accent);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* Icon (Top-right corner) */
+    .timeline-icon {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      font-size: 1.4rem;
+      color: var(--text-3);
+      opacity: 0.6;
+      transition: all 0.3s var(--ease);
+    }
+
+    .timeline-item:hover .timeline-icon {
+      color: var(--accent-light);
+      opacity: 0.9;
+      transform: translateY(-3px);
+    }
+
+    /* Title */
+    .timeline-item h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-0);
+      line-height: 1.4;
+      margin-bottom: 0.5rem;
+      padding-right: 2rem;
+    }
+
+    /* Description */
+    .timeline-item p {
+      font-size: 0.95rem;
+      color: var(--text-2);
+      line-height: 1.6;
+      margin-bottom: 0.75rem;
+    }
+
+    /* Type Badge */
+    .timeline-badge {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.35rem 0.8rem;
+      border-radius: 6px;
+      background: rgba(108, 92, 231, 0.12);
+      color: var(--accent-light);
+      border: 1px solid var(--border-accent);
+      width: fit-content;
+    }
+
+    /* Badge Color Variants */
+    .timeline-item.academic .timeline-badge {
+      background: rgba(108, 92, 231, 0.12);
+      color: #a29bfe;
+      border-color: rgba(108, 92, 231, 0.3);
+    }
+
+    .timeline-item.professional .timeline-badge {
+      background: rgba(0, 206, 201, 0.12);
+      color: var(--accent-cyan);
+      border-color: rgba(0, 206, 201, 0.3);
+    }
+
+    .timeline-item.conference .timeline-badge {
+      background: rgba(9, 132, 227, 0.12);
+      color: #5dade2;
+      border-color: rgba(9, 132, 227, 0.3);
+    }
+
+    .timeline-item.certification .timeline-badge {
+      background: rgba(46, 204, 113, 0.12);
+      color: #58d68d;
+      border-color: rgba(46, 204, 113, 0.3);
+    }
+
+    /* Hidden items (filter) */
+    .timeline-item.hidden {
+      display: none;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .section-header h1 {
+        font-size: 2.2rem;
+      }
+
+      .filter-tabs {
+        gap: 0.5rem;
+        margin-bottom: 2.5rem;
+      }
+
+      .filter-tab {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+      }
+
+      .timeline-container {
+        padding-left: 0;
+      }
+
+      .timeline-track {
+        gap: 2rem;
+      }
+
+      .timeline-item {
+        max-width: 100% !important;
+        text-align: left !important;
+        padding-left: 3rem;
+      }
+
+      .timeline-item h3 {
+        font-size: 1rem;
+        padding-right: 2.5rem;
+      }
+
+      .timeline-item p {
+        font-size: 0.9rem;
+      }
+
+      .timeline-icon {
+        top: 1rem;
+        right: 1rem;
+        font-size: 1.2rem;
+      }
+
+      .timeline-date {
+        font-size: 0.75rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .section-header h1 {
+        font-size: 1.75rem;
+      }
+
+      .filter-tabs {
+        gap: 0.5rem;
+      }
+
+      .filter-tab {
+        padding: 0.45rem 0.9rem;
+        font-size: 0.8rem;
+      }
+
+      .timeline-item {
+        padding: 1.25rem;
+        padding-left: 2.5rem;
+      }
+
+      .timeline-item h3 {
+        font-size: 0.95rem;
+      }
+
+      .timeline-item p {
+        font-size: 0.85rem;
+      }
+
+      .timeline-icon {
+        font-size: 1rem;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <!-- Background Elements -->
+  <div class="bg-ambient">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+  <div class="bg-grid"></div>
+
+  <!-- Navigation -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-mark">SA</span> Slim Agbahoungba
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html"><i class="fas fa-home"></i>Home</a>
+        <a href="works.html"><i class="fas fa-flask"></i>Works</a>
+        <a href="events.html" class="active"><i class="fas fa-calendar-alt"></i>Events</a>
+        <a href="cv.html"><i class="fas fa-file-alt"></i>CV</a>
+        <a href="faq.html"><i class="fas fa-question-circle"></i>FAQ</a>
+      </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
+      <div class="nav-socials">
+        <a href="https://scholar.google.com/" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+        <a href="https://www.linkedin.com/in/zeferino-agb/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/slimagb" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="mailto:zeferinoslim1@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="page-transition">
+    <section class="events-section container">
+      <!-- Section Header -->
+      <div class="section-header">
+        <div class="section-label">Timeline</div>
+        <h1>Events & <span class="gradient-text">Milestones</span></h1>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="filter-tabs">
+        <button class="filter-tab active" data-filter="all">All</button>
+        <button class="filter-tab" data-filter="academic">Academic</button>
+        <button class="filter-tab" data-filter="professional">Professional</button>
+        <button class="filter-tab" data-filter="conference">Conference</button>
+        <button class="filter-tab" data-filter="certification">Certification</button>
+      </div>
+
+      <!-- Timeline -->
+      <div class="timeline-container">
+        <div class="timeline-track">
+
+          <!-- 2025-Present: PhD -->
+          <div class="timeline-item academic" data-type="academic">
+            <div class="timeline-dot"></div>
+            <div class="timeline-dot-mobile"></div>
+            <i class="fas fa-graduation-cap timeline-icon"></i>
+            <div class="timeline-content">
+              <div class="timeline-date">2025 - Present</div>
+              <h3>PhD in Mathematical Engineering & Intelligent Systems (IMSI)</h3>
+              <p>École Doctorale Polytechnique de Thiès, LTISI Lab — Advanced research in AI and intelligent systems.</p>
+              <span class="timeline-badge">Academic</span>
+            </div>
+          </div>
+
+          <!-- Feb 2026–Feb 2027: Data Analyst -->
+          <div class="timeline-item professional" data-type="professional">
+            <div class="timeline-dot"></div>
+            <div class="timeline-dot-mobile"></div>
+            <i class="fas fa-briefcase timeline-icon"></i>
+            <div class="timeline-content">
+              <div class="timeline-date">Feb 2026 - Feb 2027</div>
+              <h3>Data Analyst — SCL</h3>
+              <p>Led comprehensive data integration projects, Power BI dashboards, ETL pipelines, and established data governance frameworks.</p>
+              <span class="timeline-badge">Professional</span>
+            </div>
+          </div>
+
+          <!-- Aug 2023–Present: Responsable Technique -->
+          <div class="timeline-item professional" data-type="professional">
+            <div class="timeline-dot"></div>
+            <div class="timeline-dot-mobile"></div>
+            <i class="fas fa-chart-bar timeline-icon"></i>
+            <div class="timeline-content">
+              <div class="timeline-date">Aug 2023 - Present</div>
+              <h3>Responsable Technique — BDA Institute</h3>
+              <p>Technical Lead for data studies, ETL pipelines, text analytics, and GDPR governance. Directed multiple consulting projects including BCEA, CMS, Lagardère, UBA, and political impact studies.</p>
+              <span class="timeline-badge">Professional</span>
+            </div>
+          </div>
+
+          <!-- 2025: JSSED Conference -->
+          <div class="timeline-item conference" data-type="conference">
+            <div class="timeline-dot"></div>
+            <div class="timeline-dot-mobile"></div>
+            <i class="fas fa-microphone-alt timeline-icon"></i>
+            <div class="timeline-content">
+              <div class="timeline-date">2025</div>
+              <h3>JSSED — Journées Scientifiques de la Statistique</h3>
+              <p>Presented research on school dropout prediction in Benin using advanced statistical and machine learning techniques.</p>
+              <span class="timeline-badge">Conference</span>
+            </div>
+          </div>
+
+          <!-- 2025: Google & FAO Certifications -->
+          <div class="timeline-item certification" data-type="certification">
+            <div class="timeline-dot"></div>
+            <div class="timeline-dot-mobile"></div>
+            <i class="fas fa-certificate timeline-icon"></i>
+            <div class="timeline-content">
+              <div class="timeline-date">2025</div>
+              <h3>Google Analytics & FAO Certifications</h3>
+              <p>Completed advanced certifications in Google Analytics and FAO data analysis methodologies.</p>
+              <span class="timeline-badge">Certification</span>
+            </div>
+          </div>
+
+          <!-- Nov 2024–Jan 2025: AKOME/ACET -->
+          <div class="timeline-item professional" data-type="professional">
+            <div class="timeline-dot"></div>
+            <div class="timeline-dot-mobile"></div>
+            <i class="fas fa-chart-line timeline-icon"></i>
+            <div class="timeline-content">
+              <div class="timeline-date">Nov 2024 - Jan 2025</div>
+              <h3>Statistical Consultant — AKOME/ACET</h3>
+              <p>Conducted comprehensive public policy impact evaluation using advanced statistical methods and rigorous analytical frameworks.</p>
+              <span class="timeline-badge">Professional</span>
+            </div>
+          </div>
+
+          <!-- Oct–Nov 2024: CRDES -->
+          <div class="timeline-item professional" data-type="professional">
+            <div class="timeline-dot"></div>
+            <div class="timeline-dot-mobile"></div>
+            <i class="fas fa-users timeline-icon"></i>
+            <div class="timeline-content">
+              <div class="timeline-date">Oct - Nov 2024</div>
+              <h3>Statistical Consultant — CRDES</h3>
+              <p>Performed impact evaluations on women and children empowerment programs using quantitative and qualitative methodologies.</p>
+              <span class="timeline-badge">Professional</span>
+            </div>
+          </div>
+
+          <!-- Aug–Oct 2024: CONFEMEN/PASEC -->
+          <div class="timeline-item professional" data-type="professional">
+            <div class="timeline-dot"></div>
+            <div class="timeline-dot-mobile"></div>
+            <i class="fas fa-globe-africa timeline-icon"></i>
+            <div class="timeline-content">
+              <div class="timeline-date">Aug - Oct 2024</div>
+              <h3>Statistician — CONFEMEN/PASEC</h3>
+              <p>Led multi-country education dataset harmonization project, ensuring data consistency across diverse educational systems.</p>
+              <span class="timeline-badge">Professional</span>
+            </div>
+          </div>
+
+          <!-- 2024: UNECE, UNECA, Force-N Certifications -->
+          <div class="timeline-item certification" data-type="certification">
+            <div class="timeline-dot"></div>
+            <div class="timeline-dot-mobile"></div>
+            <i class="fas fa-award timeline-icon"></i>
+            <div class="timeline-content">
+              <div class="timeline-date">2024</div>
+              <h3>Certifications — UNECE, UNECA, Force-N</h3>
+              <p>Earned certifications in official statistics, data governance, and advanced analytical methodologies from international organizations.</p>
+              <span class="timeline-badge">Certification</span>
+            </div>
+          </div>
+
+          <!-- Aug 2022–Present: Teaching Assistant -->
+          <div class="timeline-item academic" data-type="academic">
+            <div class="timeline-dot"></div>
+            <div class="timeline-dot-mobile"></div>
+            <i class="fas fa-chalkboard-teacher timeline-icon"></i>
+            <div class="timeline-content">
+              <div class="timeline-date">Aug 2022 - Present</div>
+              <h3>Teaching Assistant — Université de Thiès</h3>
+              <p>Assisted in teaching and mentoring students in data science, statistics, and machine learning courses at the university level.</p>
+              <span class="timeline-badge">Academic</span>
+            </div>
+          </div>
+
+          <!-- 2021–2023: Master's in Data Science -->
+          <div class="timeline-item academic" data-type="academic">
+            <div class="timeline-dot"></div>
+            <div class="timeline-dot-mobile"></div>
+            <i class="fas fa-university timeline-icon"></i>
+            <div class="timeline-content">
+              <div class="timeline-date">2021 - 2023</div>
+              <h3>Master's in Data Science — Université de Thiès</h3>
+              <p>Completed advanced postgraduate studies focusing on machine learning, statistical analysis, and data engineering practices.</p>
+              <span class="timeline-badge">Academic</span>
+            </div>
+          </div>
+
+          <!-- 2018–2021: Master's in Economics -->
+          <div class="timeline-item academic" data-type="academic">
+            <div class="timeline-dot"></div>
+            <div class="timeline-dot-mobile"></div>
+            <i class="fas fa-university timeline-icon"></i>
+            <div class="timeline-content">
+              <div class="timeline-date">2018 - 2021</div>
+              <h3>Master's in Economics — Université de Parakou, Benin</h3>
+              <p>Advanced study in economic theory, quantitative analysis, and development economics with emphasis on statistical methodologies.</p>
+              <span class="timeline-badge">Academic</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h4>Slim Agbahoungba</h4>
+        <p>AI & Data Scientist<br>PhD Candidate in Intelligent Systems<br>École Polytechnique de Thiès</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <a href="index.html">Home</a>
+        <a href="works.html">Works</a>
+        <a href="events.html">Events</a>
+        <a href="cv.html">CV</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="mailto:zeferinoslim1@gmail.com"><i class="fas fa-envelope"></i> zeferinoslim1@gmail.com</a>
+        <a href="https://www.linkedin.com/in/zeferino-agb/" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+        <a href="https://github.com/slimagb" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Slim Zéférino S. Agbahoungba</span>
+      <div class="footer-socials">
+        <a href="https://scholar.google.com/" target="_blank"><i class="fas fa-graduation-cap"></i></a>
+        <a href="https://www.linkedin.com/in/zeferino-agb/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/slimagb" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="mailto:zeferinoslim1@gmail.com"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-top" id="scrollTop"><i class="fas fa-arrow-up"></i></button>
+
+  <!-- JavaScript -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Events Page Specific Script -->
+  <script>
+    // Filter functionality
+    const filterTabs = document.querySelectorAll('.filter-tab');
+    const timelineItems = document.querySelectorAll('.timeline-item');
+
+    filterTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        // Update active state
+        filterTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        // Filter items
+        const filterValue = tab.getAttribute('data-filter');
+        timelineItems.forEach(item => {
+          if (filterValue === 'all') {
+            item.classList.remove('hidden');
+          } else {
+            item.classList.toggle('hidden', !item.classList.contains(filterValue));
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
