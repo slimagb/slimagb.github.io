@@ -1,501 +1,447 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ - Slim Agbahoungba</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        :root {
-            --nav-height: 80px;
-        }
-
-        .faq-container {
-            padding: 2rem;
-            margin-top: var(--nav-height);
-        }
-
-        .faq-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .faq-header-label {
-            display: inline-block;
-            font-size: 0.875rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--text-secondary, #888);
-            margin-bottom: 0.5rem;
-        }
-
-        .faq-header h1 {
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            font-weight: 700;
-            margin: 0;
-            line-height: 1.2;
-        }
-
-        .gradient-text {
-            background: linear-gradient(135deg, #6366f1 0%, #ec4899 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .faq-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .faq-accordion {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .faq-item {
-            background: var(--card-bg, rgba(255, 255, 255, 0.05));
-            border: 1px solid var(--border-color, rgba(255, 255, 255, 0.1));
-            border-radius: 0.75rem;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .faq-item:hover {
-            border-color: var(--border-hover, rgba(99, 102, 241, 0.3));
-            background: var(--card-bg-hover, rgba(99, 102, 241, 0.05));
-        }
-
-        .faq-question {
-            padding: 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-            font-weight: 600;
-            font-size: 1.025rem;
-            color: var(--text-primary, #fff);
-            transition: color 0.3s ease;
-        }
-
-        .faq-question:hover {
-            color: var(--primary-color, #6366f1);
-        }
-
-        .faq-question i {
-            font-size: 1.25rem;
-            color: var(--primary-color, #6366f1);
-            transition: transform 0.3s ease;
-            flex-shrink: 0;
-            margin-left: 1rem;
-        }
-
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-        }
-
-        .faq-answer-inner {
-            padding: 0 1.5rem 1.5rem;
-            font-size: 0.95rem;
-            line-height: 1.6;
-            color: var(--text-secondary, #aaa);
-        }
-
-        .faq-item.open .faq-answer {
-            max-height: 500px;
-        }
-
-        .faq-item.open .faq-question i {
-            transform: rotate(45deg);
-        }
-
-        .contact-card {
-            background: var(--card-bg, rgba(255, 255, 255, 0.05));
-            border: 1px solid var(--border-color, rgba(255, 255, 255, 0.1));
-            border-radius: 0.75rem;
-            overflow: hidden;
-            position: sticky;
-            top: calc(var(--nav-height) + 2rem);
-            height: fit-content;
-        }
-
-        .contact-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #6366f1 0%, #ec4899 100%);
-        }
-
-        .contact-card-content {
-            padding: 2rem;
-            position: relative;
-        }
-
-        .contact-card h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin: 0 0 0.5rem 0;
-            color: var(--text-primary, #fff);
-        }
-
-        .contact-card-desc {
-            font-size: 0.9rem;
-            color: var(--text-secondary, #aaa);
-            margin-bottom: 1.5rem;
-            line-height: 1.5;
-        }
-
-        .contact-links {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .contact-link {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 0.75rem;
-            border-radius: 0.5rem;
-            text-decoration: none;
-            color: var(--text-secondary, #aaa);
-            transition: all 0.3s ease;
-            border: 1px solid transparent;
-        }
-
-        .contact-link:hover {
-            color: var(--primary-color, #6366f1);
-            border-color: var(--primary-color, #6366f1);
-            background: rgba(99, 102, 241, 0.1);
-        }
-
-        .contact-link i {
-            font-size: 1.125rem;
-            width: 1.5rem;
-            text-align: center;
-            flex-shrink: 0;
-        }
-
-        .contact-link span {
-            flex: 1;
-            font-size: 0.9rem;
-        }
-
-        .contact-link .link-text {
-            word-break: break-all;
-        }
-
-        @media (max-width: 768px) {
-            .faq-container {
-                padding: 1.5rem;
-            }
-
-            .faq-header {
-                margin-bottom: 2rem;
-            }
-
-            .faq-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .contact-card {
-                position: static;
-            }
-
-            .faq-question {
-                font-size: 1rem;
-            }
-
-            .faq-question i {
-                font-size: 1.125rem;
-                margin-left: 0.5rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ - Slim Zéférino S. AGBAHOUNGBA</title>
+  <meta name="description" content="Frequently asked questions about data science, biostatistics, consulting, and collaboration.">
+  <meta property="og:title" content="FAQ - Slim Zéférino S. AGBAHOUNGBA">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://slimagb.github.io/faq.html">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body class="page-transition">
-    <div class="bg-ambient"></div>
-    <div class="bg-grid"></div>
+<body>
+  <div class="particles"></div>
 
-    <!-- Navigation -->
-    <nav id="navbar" class="navbar">
-        <div class="nav-inner">
-            <a href="index.html" class="nav-logo">
-                <span class="logo-mark">SA</span>
-                <span class="logo-text">Slim Agbahoungba</span>
-            </a>
+  <header>
+    <nav class="container">
+      <a href="index.html" class="nav-logo">SA</a>
+      
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link" data-i18n="nav.home">Home</a></li>
+        <li><a href="portfolio.html" class="nav-link" data-i18n="nav.portfolio">Portfolio</a></li>
+        <li><a href="publications.html" class="nav-link" data-i18n="nav.publications">Publications</a></li>
+        <li><a href="cv.html" class="nav-link" data-i18n="nav.cv">CV</a></li>
+        <li><a href="contact.html" class="nav-link" data-i18n="nav.contact">Contact</a></li>
+        <li><a href="faq.html" class="nav-link" data-i18n="nav.faq">FAQ</a></li>
+      </ul>
 
-            <ul id="navLinks" class="nav-links">
-                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-                <li><a href="works.html"><i class="fas fa-briefcase"></i> Works</a></li>
-                <li><a href="events.html"><i class="fas fa-calendar"></i> Events</a></li>
-                <li><a href="cv.html"><i class="fas fa-file"></i> CV</a></li>
-                <li><a href="faq.html"><i class="fas fa-circle-question"></i> FAQ</a></li>
-            </ul>
+      <button class="menu-toggle"><i class="fas fa-bars"></i></button>
 
-            <button id="menuToggle" class="menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-
-            <div class="nav-socials">
-                <a href="https://scholar.google.com" target="_blank" title="Google Scholar">
-                    <i class="fas fa-graduation-cap"></i>
-                </a>
-                <a href="https://linkedin.com/in/zeferino-agb/" target="_blank" title="LinkedIn">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="https://github.com/slimagb" target="_blank" title="GitHub">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="mailto:zeferinoslim1@gmail.com" title="Email">
-                    <i class="fas fa-envelope"></i>
-                </a>
-            </div>
+      <div class="nav-controls">
+        <div class="lang-switcher">
+          <button class="lang-button">
+            <span id="current-lang">EN</span>
+            <i class="fas fa-chevron-down" style="font-size: 0.75rem; margin-left: 4px;"></i>
+          </button>
+          <div class="lang-dropdown">
+            <button class="lang-option active" data-lang="en">English</button>
+            <button class="lang-option" data-lang="fr">Français</button>
+            <button class="lang-option" data-lang="es">Español</button>
+          </div>
         </div>
+        <button id="theme-toggle" class="btn-icon toggle" title="Toggle theme">
+          <i class="fas fa-sun"></i>
+        </button>
+      </div>
     </nav>
+  </header>
 
-    <!-- FAQ Page Content -->
-    <main class="faq-container">
-        <header class="faq-header">
-            <div class="faq-header-label">Questions</div>
-            <h1>Frequently Asked <span class="gradient-text">Questions</span></h1>
-        </header>
-
-        <div class="faq-content">
-            <!-- FAQ Accordion -->
-            <div class="faq-accordion">
-                <!-- FAQ Item 1 -->
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        <span>What is your current research focus?</span>
-                        <i class="fas fa-plus"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner">
-                            I'm pursuing a PhD at LTISI lab with a focus on hybrid statistical-AI spatio-temporal models for climate-sensitive vector-borne disease surveillance in West Africa. My work combines machine learning, deep learning, and classical statistical approaches to better understand and predict disease patterns.
-                        </div>
-                    </div>
-                </div>
-
-                <!-- FAQ Item 2 -->
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        <span>Are you open to collaboration or consulting?</span>
-                        <i class="fas fa-plus"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner">
-                            Yes! I'm open to research collaborations, data science consulting, and speaking engagements. Whether you're looking to work on climate-health research, data engineering projects, or need analytical expertise, I'd love to discuss possibilities. Feel free to reach out via email or LinkedIn.
-                        </div>
-                    </div>
-                </div>
-
-                <!-- FAQ Item 3 -->
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        <span>What tools and technologies do you use most?</span>
-                        <i class="fas fa-plus"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner">
-                            <strong>Data Science & ML:</strong> Python (pandas, scikit-learn, TensorFlow), SQL, R, Stata, SPSS<br><br>
-                            <strong>Analytics & BI:</strong> Power BI (DAX), Git<br><br>
-                            <strong>Data Engineering:</strong> Apache Spark, Apache Airflow, dbt, Snowflake, Databricks, Azure Synapse
-                        </div>
-                    </div>
-                </div>
-
-                <!-- FAQ Item 4 -->
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        <span>What is your teaching experience?</span>
-                        <i class="fas fa-plus"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner">
-                            I've been a Teaching Assistant at Université de Thiès since August 2022. I teach macroeconomics, microeconomics, and statistics. I also lead practical sessions in Python, Stata, R, and Excel, and supervise student theses. My focus is on making complex quantitative concepts accessible and applicable.
-                        </div>
-                    </div>
-                </div>
-
-                <!-- FAQ Item 5 -->
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        <span>Where can I find your publications?</span>
-                        <i class="fas fa-plus"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner">
-                            You can find my publications and projects on my <a href="works.html" style="color: var(--primary-color, #6366f1); text-decoration: none; font-weight: 500;">Works page</a>, <a href="https://scholar.google.com" target="_blank" style="color: var(--primary-color, #6366f1); text-decoration: none; font-weight: 500;">Google Scholar</a>, and my <a href="https://github.com/slimagb" target="_blank" style="color: var(--primary-color, #6366f1); text-decoration: none; font-weight: 500;">GitHub</a> for code and research implementations.
-                        </div>
-                    </div>
-                </div>
-
-                <!-- FAQ Item 6 -->
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        <span>What types of consulting projects have you worked on?</span>
-                        <i class="fas fa-plus"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner">
-                            At BDA Institute, I've led consulting projects including: social climate studies (BCEA), mystery shopping evaluations (CMS), market research for Lagardère Retail, political analysis (Diomaye-Sonko 100 days), and banking sector studies (UBA). I've also worked on impact evaluations at AKOME/ACET and CRDES, combining rigorous methodology with practical insights.
-                        </div>
-                    </div>
-                </div>
-
-                <!-- FAQ Item 7 -->
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        <span>How can I contact you?</span>
-                        <i class="fas fa-plus"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner">
-                            <strong>Email:</strong> <a href="mailto:zeferinoslim1@gmail.com" style="color: var(--primary-color, #6366f1); text-decoration: none; font-weight: 500;">zeferinoslim1@gmail.com</a><br><br>
-                            <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/zeferino-agb/" target="_blank" style="color: var(--primary-color, #6366f1); text-decoration: none; font-weight: 500;">linkedin.com/in/zeferino-agb/</a><br><br>
-                            <strong>GitHub:</strong> <a href="https://github.com/slimagb" target="_blank" style="color: var(--primary-color, #6366f1); text-decoration: none; font-weight: 500;">github.com/slimagb</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- FAQ Item 8 -->
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        <span>What is your role at BDA Institute?</span>
-                        <i class="fas fa-plus"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner">
-                            I serve as Responsable Technique (Technical Lead) at BDA Institute. In this role, I lead multi-stage research projects, automate ETL pipelines, develop NLP models, design Power BI dashboards, and oversee GDPR governance and data protection practices. I bridge the gap between technical implementation and research objectives.
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Contact Card -->
-            <aside class="contact-card">
-                <div class="contact-card-content">
-                    <h3>Get in Touch</h3>
-                    <p class="contact-card-desc">Have a question or want to collaborate?</p>
-
-                    <div class="contact-links">
-                        <a href="mailto:zeferinoslim1@gmail.com" class="contact-link">
-                            <i class="fas fa-envelope"></i>
-                            <span class="link-text">zeferinoslim1@gmail.com</span>
-                        </a>
-
-                        <a href="https://linkedin.com/in/zeferino-agb/" target="_blank" class="contact-link">
-                            <i class="fab fa-linkedin"></i>
-                            <span class="link-text">LinkedIn</span>
-                        </a>
-
-                        <a href="https://github.com/slimagb" target="_blank" class="contact-link">
-                            <i class="fab fa-github"></i>
-                            <span class="link-text">GitHub</span>
-                        </a>
-
-                        <a href="tel:+221778849041" class="contact-link">
-                            <i class="fas fa-phone"></i>
-                            <span class="link-text">+221 77.884.90.41</span>
-                        </a>
-
-                        <div class="contact-link" style="cursor: default; border: none; background: none;">
-                            <i class="fas fa-map-pin"></i>
-                            <span class="link-text">Thiès / Dakar, Senegal</span>
-                        </div>
-                    </div>
-                </div>
-            </aside>
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h1 data-i18n="faq.title">Frequently Asked Questions</h1>
+          <p class="section-subtitle" data-i18n="faq.subtitle">Common questions about my work and collaboration</p>
         </div>
-    </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-column">
-                <h4>About</h4>
-                <p>Data scientist and PhD researcher focused on climate-sensitive disease surveillance in West Africa using hybrid statistical-AI approaches.</p>
+        <div class="faq-container">
+          <!-- Q1 -->
+          <div class="faq-item">
+            <div class="faq-header">
+              <h3 class="faq-question">What is your primary focus area in data science?</h3>
+              <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
             </div>
-
-            <div class="footer-column">
-                <h4>Navigation</h4>
+            <div class="faq-body">
+              <div class="faq-answer">
+                <p>
+                  My primary focus is integrating statistical rigor with machine learning innovation for healthcare and development data. This includes:
+                </p>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="works.html">Works</a></li>
-                    <li><a href="events.html">Events</a></li>
-                    <li><a href="cv.html">CV</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
+                  <li>Biostatistics and epidemiological analysis</li>
+                  <li>Causal inference and program evaluation</li>
+                  <li>Agricultural analytics and climate-sensitive applications</li>
+                  <li>Predictive modeling for public health surveillance</li>
+                  <li>Advanced machine learning for complex data problems</li>
                 </ul>
+                <p>
+                  I'm particularly passionate about applying data science methods to development challenges in Africa.
+                </p>
+              </div>
             </div>
+          </div>
 
-            <div class="footer-column">
-                <h4>Contact</h4>
+          <!-- Q2 -->
+          <div class="faq-item">
+            <div class="faq-header">
+              <h3 class="faq-question">What programming languages do I work with?</h3>
+              <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+            </div>
+            <div class="faq-body">
+              <div class="faq-answer">
+                <p>I have advanced proficiency in multiple programming languages:</p>
                 <ul>
-                    <li><a href="mailto:zeferinoslim1@gmail.com"><i class="fas fa-envelope"></i> Email</a></li>
-                    <li><a href="https://linkedin.com/in/zeferino-agb/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
-                    <li><a href="https://github.com/slimagb" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
-                    <li><a href="https://scholar.google.com" target="_blank"><i class="fas fa-graduation-cap"></i> Scholar</a></li>
+                  <li><strong>R (Advanced)</strong> - Primary tool for statistical analysis and visualization</li>
+                  <li><strong>Python</strong> - For machine learning, data engineering, and web development</li>
+                  <li><strong>SQL</strong> - Database management and complex queries</li>
+                  <li><strong>Stata</strong> - Econometric analysis and specialized statistics</li>
+                  <li><strong>SPSS</strong> - User-friendly statistical analysis</li>
+                  <li><strong>Git</strong> - Version control and collaboration</li>
                 </ul>
+                <p>
+                  I'm proficient in both traditional statistical programming and modern data science frameworks.
+                </p>
+              </div>
             </div>
-        </div>
+          </div>
 
-        <div class="footer-bottom">
-            <p>&copy; 2026 Slim Agbahoungba. All rights reserved.</p>
-            <div class="footer-socials">
-                <a href="https://scholar.google.com" target="_blank" title="Google Scholar">
-                    <i class="fas fa-graduation-cap"></i>
-                </a>
-                <a href="https://linkedin.com/in/zeferino-agb/" target="_blank" title="LinkedIn">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="https://github.com/slimagb" target="_blank" title="GitHub">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="mailto:zeferinoslim1@gmail.com" title="Email">
-                    <i class="fas fa-envelope"></i>
-                </a>
+          <!-- Q3 -->
+          <div class="faq-item">
+            <div class="faq-header">
+              <h3 class="faq-question">Do you offer consulting services?</h3>
+              <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
             </div>
-        </div>
+            <div class="faq-body">
+              <div class="faq-answer">
+                <p>
+                  Yes! I offer consulting services through my freelance work with BDA Institute and on a project basis. I can help with:
+                </p>
+                <ul>
+                  <li>Data science strategy and architecture design</li>
+                  <li>Statistical analysis and methodology selection</li>
+                  <li>Machine learning model development and deployment</li>
+                  <li>Data engineering pipeline design</li>
+                  <li>Business intelligence dashboard development</li>
+                  <li>Training and capacity building</li>
+                </ul>
+                <p>
+                  For consulting inquiries, please contact me at <strong>slim.agbahoungba@ept.edu.sn</strong> with details about your project.
+                </p>
+              </div>
+            </div>
+          </div>
 
-        <a href="#top" class="scroll-top" id="scrollTop">
-            <i class="fas fa-arrow-up"></i>
+          <!-- Q4 -->
+          <div class="faq-item">
+            <div class="faq-header">
+              <h3 class="faq-question">What is your research on agricultural yield prediction?</h3>
+              <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+            </div>
+            <div class="faq-body">
+              <div class="faq-answer">
+                <p>
+                  My primary research integrates classical statistical models with deep learning approaches to predict agricultural yields in climate-sensitive contexts. The work addresses:
+                </p>
+                <ul>
+                  <li>Prediction accuracy improvement through ensemble methods</li>
+                  <li>Climate variability and uncertainty quantification</li>
+                  <li>Application to smallholder farmers in resource-limited settings</li>
+                  <li>Spatio-temporal modeling of crop performance</li>
+                  <li>Integration with meteorological and soil data</li>
+                </ul>
+                <p>
+                  This manuscript is currently in preparation for submission to Springer Nature.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q5 -->
+          <div class="faq-item">
+            <div class="faq-header">
+              <h3 class="faq-question">Are you interested in research collaboration?</h3>
+              <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+            </div>
+            <div class="faq-body">
+              <div class="faq-answer">
+                <p>
+                  Absolutely! I'm actively seeking research collaborations in several areas:
+                </p>
+                <ul>
+                  <li>Epidemiological surveillance systems with AI integration</li>
+                  <li>Agricultural productivity under climate change</li>
+                  <li>Health economics and program evaluation</li>
+                  <li>Educational data analysis and policy research</li>
+                  <li>Development impact assessment methodologies</li>
+                </ul>
+                <p>
+                  If you have interesting research questions or datasets, I'd love to discuss potential collaborations. Reach out through my contact page!
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q6 -->
+          <div class="faq-item">
+            <div class="faq-header">
+              <h3 class="faq-question">How do you approach complex data science problems?</h3>
+              <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+            </div>
+            <div class="faq-body">
+              <div class="faq-answer">
+                <p>
+                  My approach combines rigorous methodology with practical implementation:
+                </p>
+                <ul>
+                  <li><strong>Problem Definition</strong> - Understanding business/research objectives and constraints</li>
+                  <li><strong>Data Exploration</strong> - Comprehensive EDA and quality assessment</li>
+                  <li><strong>Methodology Selection</strong> - Choosing appropriate statistical/ML methods based on context</li>
+                  <li><strong>Model Development</strong> - Building, validating, and comparing multiple approaches</li>
+                  <li><strong>Interpretation</strong> - Translating technical results into actionable insights</li>
+                  <li><strong>Implementation</strong> - Deploying solutions with documentation and training</li>
+                </ul>
+                <p>
+                  I prioritize interpretability, reproducibility, and practical impact.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q7 -->
+          <div class="faq-item">
+            <div class="faq-header">
+              <h3 class="faq-question">What cloud platforms do you work with?</h3>
+              <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+            </div>
+            <div class="faq-body">
+              <div class="faq-answer">
+                <p>
+                  I have experience with major cloud data platforms and tools:
+                </p>
+                <ul>
+                  <li><strong>Snowflake</strong> - Cloud data warehouse design and optimization</li>
+                  <li><strong>Google BigQuery</strong> - Analytics and machine learning pipelines</li>
+                  <li><strong>Databricks</strong> - Apache Spark and ML workflows</li>
+                  <li><strong>Azure Synapse</strong> - Enterprise data warehousing</li>
+                  <li><strong>Apache Spark</strong> - Distributed computing</li>
+                  <li><strong>Airflow & dbt</strong> - Data orchestration and transformation</li>
+                </ul>
+                <p>
+                  I can help design and implement scalable cloud-based data architectures.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q8 -->
+          <div class="faq-item">
+            <div class="faq-header">
+              <h3 class="faq-question">How do you approach statistical validity and reproducibility?</h3>
+              <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+            </div>
+            <div class="faq-body">
+              <div class="faq-answer">
+                <p>
+                  Reproducibility and transparency are core to my work:
+                </p>
+                <ul>
+                  <li>Version control (Git/GitHub) for all code and documentation</li>
+                  <li>Clear methodology documentation and assumption testing</li>
+                  <li>Sensitivity analyses and robustness checks</li>
+                  <li>Open-source publishing of research code and data</li>
+                  <li>Adherence to statistical best practices and standards</li>
+                  <li>Peer review and feedback incorporation</li>
+                </ul>
+                <p>
+                  All research code is available on my GitHub for transparency and collaboration.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q9 -->
+          <div class="faq-item">
+            <div class="faq-header">
+              <h3 class="faq-question">What's your experience with business intelligence and dashboards?</h3>
+              <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+            </div>
+            <div class="faq-body">
+              <div class="faq-answer">
+                <p>
+                  I have extensive experience building data visualization and BI solutions:
+                </p>
+                <ul>
+                  <li><strong>Power BI</strong> - Interactive dashboards with DAX formulas</li>
+                  <li><strong>Tableau</strong> - Advanced visualization and storytelling</li>
+                  <li><strong>R Shiny</strong> - Custom interactive web applications</li>
+                  <li><strong>Qlik</strong> - In-memory analytics and exploration</li>
+                </ul>
+                <p>
+                  I specialize in translating complex data into compelling visual narratives that drive decision-making.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q10 -->
+          <div class="faq-item">
+            <div class="faq-header">
+              <h3 class="faq-question">How can organizations work with you?</h3>
+              <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+            </div>
+            <div class="faq-body">
+              <div class="faq-answer">
+                <p>
+                  There are several ways to engage with my services:
+                </p>
+                <ul>
+                  <li><strong>Consulting Projects</strong> - Short to medium-term engagements for specific data science challenges</li>
+                  <li><strong>Research Collaboration</strong> - Joint research projects on mutual interests</li>
+                  <li><strong>Training & Capacity Building</strong> - Workshops and training programs on data science topics</li>
+                  <li><strong>Advisory</strong> - Strategic guidance on data science initiatives</li>
+                  <li><strong>Contract Work</strong> - Development of specific analyses or tools</li>
+                </ul>
+                <p>
+                  To discuss how we can work together, please contact me with details about your needs and timeline.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q11 -->
+          <div class="faq-item">
+            <div class="faq-header">
+              <h3 class="faq-question">What's your approach to ethical data science?</h3>
+              <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+            </div>
+            <div class="faq-body">
+              <div class="faq-answer">
+                <p>
+                  Ethical considerations are central to all my work:
+                </p>
+                <ul>
+                  <li>Transparent communication about model limitations and uncertainties</li>
+                  <li>Privacy protection and responsible data handling</li>
+                  <li>Bias detection and mitigation in algorithms and analyses</li>
+                  <li>Fair representation in data and results</li>
+                  <li>Environmental consideration in resource-intensive computations</li>
+                  <li>Focus on benefiting communities and individuals affected by applications</li>
+                </ul>
+                <p>
+                  I'm committed to using data science to create positive impact while respecting ethical boundaries.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q12 -->
+          <div class="faq-item">
+            <div class="faq-header">
+              <h3 class="faq-question">How do you stay current with data science trends?</h3>
+              <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+            </div>
+            <div class="faq-body">
+              <div class="faq-answer">
+                <p>
+                  Continuous learning is essential in this rapidly evolving field:
+                </p>
+                <ul>
+                  <li>Regular professional certifications and training (Google Analytics IQ, FAO, UNECA modules)</li>
+                  <li>Active engagement with research communities (LTISI Lab at EPT)</li>
+                  <li>Publication in peer-reviewed venues</li>
+                  <li>Participation in conferences and workshops</li>
+                  <li>Following academic literature and technical blogs</li>
+                  <li>Experimentation with new tools and methodologies</li>
+                </ul>
+                <p>
+                  I'm committed to staying at the forefront of data science innovation and best practices.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section" style="background: var(--surface-secondary);">
+      <div class="container" style="text-align: center;">
+        <h2 style="margin-bottom: 1rem;">Still have questions?</h2>
+        <p style="margin-bottom: 2rem; color: var(--text-secondary); font-size: 1.1rem;">
+          Don't hesitate to reach out! I'm happy to discuss your data science needs and how we can work together.
+        </p>
+        <a href="contact.html" class="btn btn-primary">
+          <i class="fas fa-envelope"></i> Get in Touch
         </a>
-    </footer>
+      </div>
+    </section>
+  </main>
 
-    <script src="assets/js/main.js"></script>
-    <script>
-        function toggleFaq(element) {
-            const faqItem = element.parentElement;
-            const isOpen = faqItem.classList.contains('open');
+  <footer>
+    <div class="footer-content">
+      <div class="footer-main">
+        <div class="footer-section">
+          <h3 data-i18n="footer.sitemap">Sitemap</h3>
+          <div class="footer-links">
+            <a href="index.html" class="footer-link" data-i18n="nav.home">Home</a>
+            <a href="portfolio.html" class="footer-link" data-i18n="nav.portfolio">Portfolio</a>
+            <a href="publications.html" class="footer-link" data-i18n="nav.publications">Publications</a>
+            <a href="cv.html" class="footer-link" data-i18n="nav.cv">CV</a>
+            <a href="contact.html" class="footer-link" data-i18n="nav.contact">Contact</a>
+            <a href="faq.html" class="footer-link" data-i18n="nav.faq">FAQ</a>
+          </div>
+        </div>
 
-            // Close all FAQ items
-            document.querySelectorAll('.faq-item').forEach(item => {
-                item.classList.remove('open');
-            });
+        <div class="footer-section">
+          <h3 data-i18n="footer.connect">Connect</h3>
+          <div class="footer-links">
+            <a href="https://www.linkedin.com/in/zeferino-agb/" class="footer-link" target="_blank" rel="noopener">
+              <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+            <a href="https://github.com/slimagb" class="footer-link" target="_blank" rel="noopener">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+            <a href="https://scholar.google.com/" class="footer-link" target="_blank" rel="noopener">
+              <i class="fas fa-graduation-cap"></i> Google Scholar
+            </a>
+          </div>
+        </div>
 
-            // Open clicked item if it wasn't open
-            if (!isOpen) {
-                faqItem.classList.add('open');
-            }
-        }
-    </script>
+        <div class="footer-section">
+          <h3 data-i18n="footer.follow">Follow</h3>
+          <div class="footer-social">
+            <a href="https://www.linkedin.com/in/zeferino-agb/" class="social-link" target="_blank" rel="noopener" title="LinkedIn">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/slimagb" class="social-link" target="_blank" rel="noopener" title="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://scholar.google.com/" class="social-link" target="_blank" rel="noopener" title="Google Scholar">
+              <i class="fas fa-graduation-cap"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-credits" data-i18n="footer.credits">
+          Designed & Built by Slim Zéférino S. AGBAHOUNGBA | Data Science Portfolio
+        </div>
+        <div style="color: var(--text-secondary); font-size: 0.85rem;">
+          <span id="footer-year"></span> © All Rights Reserved
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>

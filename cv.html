@@ -3,918 +3,429 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CV | Slim Agbahoungba | AI & Data Scientist</title>
-  <meta name="description" content="Curriculum Vitae of Slim Agbahoungba - AI & Data Scientist and PhD Candidate">
-  <meta name="keywords" content="CV, Resume, AI, Data Science, Machine Learning, Senegal">
-  <meta name="author" content="Slim Zéférino S. Agbahoungba">
-
-  <!-- Google Fonts -->
+  <title>CV - Slim Zéférino S. AGBAHOUNGBA</title>
+  <meta name="description" content="Complete curriculum vitae with education, experience, and professional qualifications.">
+  <meta property="og:title" content="CV - Slim Zéférino S. AGBAHOUNGBA">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://slimagb.github.io/cv.html">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-
-  <!-- Font Awesome 6.5.1 -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
-
-  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap">
   <link rel="stylesheet" href="assets/css/style.css">
-
-  <!-- Page-specific Styles -->
-  <style>
-    /* CV Page Specific Styles */
-
-    .page-header {
-      margin-bottom: 3rem;
-      position: relative;
-      z-index: 2;
-    }
-
-    .page-label {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.875rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent-cyan);
-      margin-bottom: 0.5rem;
-      display: block;
-    }
-
-    .page-title {
-      font-size: 2.5rem;
-      font-weight: 800;
-      line-height: 1.2;
-      margin: 0;
-    }
-
-    .gradient-text {
-      background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    /* Download Bar */
-    .download-bar {
-      background: var(--bg-card);
-      border: 1px solid var(--border-accent);
-      border-radius: var(--radius);
-      padding: 1.5rem;
-      margin-bottom: 3rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 2rem;
-      position: relative;
-      z-index: 2;
-      transition: all 0.3s var(--ease);
-    }
-
-    .download-bar:hover {
-      background: var(--bg-card-hover);
-      border-color: var(--accent-cyan);
-    }
-
-    .download-text {
-      flex: 1;
-    }
-
-    .download-text h3 {
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
-
-    .download-text p {
-      font-size: 0.95rem;
-      color: var(--text-2);
-      margin: 0;
-    }
-
-    .btn-request {
-      padding: 0.875rem 2rem;
-      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-cyan) 100%);
-      color: white;
-      border: none;
-      border-radius: var(--radius-sm);
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      transition: all 0.3s var(--ease);
-      white-space: nowrap;
-      font-family: var(--font-sans);
-    }
-
-    .btn-request:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(108, 92, 231, 0.3);
-    }
-
-    /* Section Styles */
-    .cv-section {
-      margin-bottom: 4rem;
-      position: relative;
-      z-index: 2;
-    }
-
-    .section-header {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 2rem;
-      padding-bottom: 1.5rem;
-      border-bottom: 2px solid var(--border-accent);
-    }
-
-    .section-icon {
-      font-size: 1.75rem;
-      color: var(--accent-cyan);
-      width: 40px;
-      text-align: center;
-    }
-
-    .section-title {
-      font-size: 1.75rem;
-      font-weight: 700;
-      margin: 0;
-    }
-
-    /* Experience Cards */
-    .experience-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-left: 3px solid var(--border);
-      border-radius: var(--radius-sm);
-      padding: 1.75rem;
-      margin-bottom: 1.5rem;
-      transition: all 0.3s var(--ease);
-      position: relative;
-    }
-
-    .experience-card:hover {
-      background: var(--bg-card-hover);
-      border-left-color: var(--accent-cyan);
-      transform: translateX(4px);
-      box-shadow: 0 4px 20px rgba(108, 92, 231, 0.1);
-    }
-
-    .experience-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 0.5rem;
-      gap: 1rem;
-    }
-
-    .experience-title {
-      font-size: 1.1rem;
-      font-weight: 700;
-      margin: 0;
-    }
-
-    .experience-date {
-      font-family: var(--font-mono);
-      font-size: 0.85rem;
-      color: var(--text-2);
-      white-space: nowrap;
-    }
-
-    .experience-organization {
-      font-size: 0.95rem;
-      color: var(--accent-cyan);
-      font-weight: 600;
-      margin-bottom: 1rem;
-    }
-
-    .experience-description {
-      margin: 0;
-    }
-
-    .experience-description ul {
-      list-style: none;
-      padding: 0;
-      margin: 1rem 0 0 0;
-    }
-
-    .experience-description li {
-      padding-left: 1.5rem;
-      margin-bottom: 0.75rem;
-      position: relative;
-      font-size: 0.95rem;
-      color: var(--text-1);
-      line-height: 1.6;
-    }
-
-    .experience-description li:before {
-      content: "▸";
-      position: absolute;
-      left: 0;
-      color: var(--accent-cyan);
-      font-weight: bold;
-    }
-
-    /* Education Entries */
-    .education-entry {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
-      transition: all 0.3s var(--ease);
-    }
-
-    .education-entry:hover {
-      background: var(--bg-card-hover);
-      border-color: var(--accent-cyan);
-    }
-
-    .education-year {
-      font-family: var(--font-mono);
-      font-size: 0.85rem;
-      color: var(--accent-cyan);
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
-
-    .education-degree {
-      font-size: 1rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
-
-    .education-institution {
-      font-size: 0.95rem;
-      color: var(--text-2);
-      margin: 0;
-    }
-
-    /* Skills Grid */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-      gap: 1rem;
-      margin-bottom: 2rem;
-    }
-
-    .skill-chip {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      padding: 0.75rem 1rem;
-      border-radius: 20px;
-      font-size: 0.9rem;
-      font-weight: 500;
-      text-align: center;
-      cursor: default;
-      transition: all 0.3s var(--ease);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .skill-chip:hover {
-      background: var(--bg-card-hover);
-      border-color: var(--accent-cyan);
-      color: var(--accent-cyan);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0, 206, 201, 0.15);
-    }
-
-    .skills-category {
-      margin-bottom: 2rem;
-    }
-
-    .skills-category-title {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: var(--accent-cyan);
-      margin-bottom: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    /* Certifications List */
-    .certifications-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .certification-item {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      padding: 1.5rem;
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: flex-start;
-      gap: 1rem;
-      transition: all 0.3s var(--ease);
-    }
-
-    .certification-item:hover {
-      background: var(--bg-card-hover);
-      border-color: var(--accent-cyan);
-    }
-
-    .certification-icon {
-      font-size: 1.5rem;
-      color: var(--accent-cyan);
-      margin-top: 0.25rem;
-      flex-shrink: 0;
-    }
-
-    .certification-content {
-      flex: 1;
-    }
-
-    .certification-year {
-      font-family: var(--font-mono);
-      font-size: 0.85rem;
-      color: var(--text-2);
-      font-weight: 600;
-    }
-
-    .certification-name {
-      font-size: 1rem;
-      font-weight: 700;
-      margin: 0.25rem 0;
-    }
-
-    .certification-issuer {
-      font-size: 0.9rem;
-      color: var(--text-2);
-      margin: 0;
-    }
-
-    /* Publications List */
-    .publications-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .publication-item {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      padding: 1.5rem;
-      margin-bottom: 1rem;
-      transition: all 0.3s var(--ease);
-    }
-
-    .publication-item:hover {
-      background: var(--bg-card-hover);
-      border-color: var(--accent);
-    }
-
-    .publication-year {
-      font-family: var(--font-mono);
-      font-size: 0.85rem;
-      color: var(--accent-cyan);
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
-
-    .publication-title {
-      font-size: 1.05rem;
-      font-weight: 700;
-      margin: 0.5rem 0;
-      line-height: 1.4;
-    }
-
-    .publication-meta {
-      font-size: 0.9rem;
-      color: var(--text-2);
-      margin: 0;
-      font-style: italic;
-    }
-
-    /* Languages */
-    .languages-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .language-item {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      padding: 1.5rem;
-      transition: all 0.3s var(--ease);
-    }
-
-    .language-item:hover {
-      background: var(--bg-card-hover);
-      border-color: var(--accent-cyan);
-    }
-
-    .language-name {
-      font-size: 1.1rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
-
-    .language-level {
-      font-size: 0.9rem;
-      color: var(--text-2);
-      margin: 0;
-    }
-
-    /* Background Elements */
-    .bg-ambient {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-      pointer-events: none;
-      overflow: hidden;
-    }
-
-    .bg-grid {
-      position: fixed;
-      inset: 0;
-      background-image:
-        linear-gradient(0deg, transparent 24%, rgba(0, 255, 255, 0.05) 25%, rgba(0, 255, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(0, 255, 255, 0.05) 75%, rgba(0, 255, 255, 0.05) 76%, transparent 77%, transparent),
-        linear-gradient(90deg, transparent 24%, rgba(0, 255, 255, 0.05) 25%, rgba(0, 255, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(0, 255, 255, 0.05) 75%, rgba(0, 255, 255, 0.05) 76%, transparent 77%, transparent);
-      background-size: 50px 50px;
-      z-index: 1;
-      pointer-events: none;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .page-title {
-        font-size: 2rem;
-      }
-
-      .download-bar {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .btn-request {
-        width: 100%;
-        justify-content: center;
-      }
-
-      .experience-header {
-        flex-direction: column;
-      }
-
-      .experience-date {
-        white-space: normal;
-      }
-
-      .skills-grid {
-        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-      }
-
-      .section-header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-  </style>
 </head>
 <body>
-  <!-- Background -->
-  <div class="bg-ambient">
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="orb orb-3"></div>
-  </div>
-  <div class="bg-grid"></div>
+  <div class="particles"></div>
 
-  <!-- Navigation -->
-  <nav id="navbar">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo">
-        <span class="logo-mark">SA</span> Slim Agbahoungba
-      </a>
-      <div class="nav-links" id="navLinks">
-        <a href="index.html"><i class="fas fa-home"></i>Home</a>
-        <a href="works.html"><i class="fas fa-flask"></i>Works</a>
-        <a href="events.html"><i class="fas fa-calendar-alt"></i>Events</a>
-        <a href="cv.html"><i class="fas fa-file-alt"></i>CV</a>
-        <a href="faq.html"><i class="fas fa-question-circle"></i>FAQ</a>
-      </div>
-      <button class="menu-toggle" id="menuToggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
-      <div class="nav-socials">
-        <a href="https://scholar.google.com/" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
-        <a href="https://www.linkedin.com/in/zeferino-agb/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://github.com/slimagb" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-        <a href="mailto:zeferinoslim1@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-      </div>
-    </div>
-  </nav>
+  <header>
+    <nav class="container">
+      <a href="index.html" class="nav-logo">SA</a>
+      
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link" data-i18n="nav.home">Home</a></li>
+        <li><a href="portfolio.html" class="nav-link" data-i18n="nav.portfolio">Portfolio</a></li>
+        <li><a href="publications.html" class="nav-link" data-i18n="nav.publications">Publications</a></li>
+        <li><a href="cv.html" class="nav-link" data-i18n="nav.cv">CV</a></li>
+        <li><a href="contact.html" class="nav-link" data-i18n="nav.contact">Contact</a></li>
+        <li><a href="faq.html" class="nav-link" data-i18n="nav.faq">FAQ</a></li>
+      </ul>
 
-  <!-- Main Content -->
-  <main class="page-transition">
-    <section class="container">
-      <!-- Page Header -->
-      <div class="page-header">
-        <label class="page-label">Curriculum Vitae</label>
-        <h1 class="page-title">Professional <span class="gradient-text">Profile</span></h1>
-      </div>
+      <button class="menu-toggle"><i class="fas fa-bars"></i></button>
 
-      <!-- Download Bar -->
-      <div class="download-bar">
-        <div class="download-text">
-          <h3>Get My Full CV</h3>
-          <p>Request a detailed PDF version of my curriculum vitae</p>
+      <div class="nav-controls">
+        <div class="lang-switcher">
+          <button class="lang-button">
+            <span id="current-lang">EN</span>
+            <i class="fas fa-chevron-down" style="font-size: 0.75rem; margin-left: 4px;"></i>
+          </button>
+          <div class="lang-dropdown">
+            <button class="lang-option active" data-lang="en">English</button>
+            <button class="lang-option" data-lang="fr">Français</button>
+            <button class="lang-option" data-lang="es">Español</button>
+          </div>
         </div>
-        <a href="mailto:zeferinoslim1@gmail.com?subject=CV%20Request" class="btn-request">
-          <i class="fas fa-envelope"></i> Request CV
-        </a>
+        <button id="theme-toggle" class="btn-icon toggle" title="Toggle theme">
+          <i class="fas fa-sun"></i>
+        </button>
       </div>
+    </nav>
+  </header>
 
-      <!-- Professional Experience Section -->
-      <div class="cv-section">
+  <main>
+    <section class="section">
+      <div class="container">
         <div class="section-header">
-          <div class="section-icon">
-            <i class="fas fa-briefcase"></i>
-          </div>
-          <h2 class="section-title">Professional Experience</h2>
+          <h1 data-i18n="cv.title">Curriculum Vitae</h1>
+          <p class="section-subtitle" data-i18n="cv.subtitle">Education & Professional Experience</p>
         </div>
 
-        <!-- Experience 1 -->
-        <div class="experience-card">
-          <div class="experience-header">
-            <div>
-              <h3 class="experience-title">Responsable Technique</h3>
-              <p class="experience-organization">BDA Institute, Dakar</p>
+        <!-- Education Timeline -->
+        <h2 style="margin-top: 3rem; margin-bottom: 2rem;" data-i18n="cv.education">Education</h2>
+        
+        <div class="timeline">
+          <!-- PhD -->
+          <div class="timeline-item">
+            <div class="timeline-row">
+              <div class="timeline-content">
+                <div class="timeline-date">2025–Present</div>
+              </div>
+              <div class="timeline-marker"></div>
+              <div class="timeline-body">
+                <h3 class="timeline-title">Doctorat en Ingénierie Mathématique et Systèmes Intelligents (IMSI)</h3>
+                <p class="timeline-org">École Polytechnique de Thiès • LTISI Lab</p>
+                <p class="timeline-description">
+                  PhD research focusing on AI and epidemiology applications. Conducting research on integrated statistical and machine learning models for agricultural yield prediction and disease surveillance in West Africa. Advisor: Prof. Alassane Ba.
+                </p>
+              </div>
             </div>
-            <span class="experience-date">Aug 2023 – Present</span>
           </div>
-          <p class="experience-description">
-            <ul>
-              <li>Technical lead for multi-stage statistical research projects</li>
-              <li>Designed automated ETL pipelines using Python and Power Automate</li>
-              <li>Developed text analytics and NLP models for research insights</li>
-              <li>Created Power BI dashboards and managed GDPR governance frameworks</li>
-              <li>Led consulting projects: BCEA social climate study, CMS mystery study, Lagardère market research, Diomaye-Sonko 100 days political analysis, UBA banking studies</li>
+
+          <!-- Master 2 -->
+          <div class="timeline-item">
+            <div class="timeline-row">
+              <div class="timeline-content">
+                <div class="timeline-date">2021–2023</div>
+              </div>
+              <div class="timeline-marker"></div>
+              <div class="timeline-body">
+                <h3 class="timeline-title">Master 2 en Data Science et Applications</h3>
+                <p class="timeline-org">Université de Thiès</p>
+                <p class="timeline-description">
+                  Advanced training in machine learning, statistical modeling, and data engineering. Thesis on predictive analytics for agricultural optimization. Specialized in Python, R, and cloud data platforms.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Master 1 -->
+          <div class="timeline-item">
+            <div class="timeline-row">
+              <div class="timeline-content">
+                <div class="timeline-date">2018–2021</div>
+              </div>
+              <div class="timeline-marker"></div>
+              <div class="timeline-body">
+                <h3 class="timeline-title">Master 2 en Économie et Gestion du Développement Local</h3>
+                <p class="timeline-org">Université de Parakou, Bénin</p>
+                <p class="timeline-description">
+                  Master's degree in development economics and local governance. Research on rural development, resource management, and socioeconomic analysis. Built foundation in quantitative economics and regional analysis.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- License -->
+          <div class="timeline-item">
+            <div class="timeline-row">
+              <div class="timeline-content">
+                <div class="timeline-date">2016–2018</div>
+              </div>
+              <div class="timeline-marker"></div>
+              <div class="timeline-body">
+                <h3 class="timeline-title">Licence en Économie Agricole</h3>
+                <p class="timeline-org">Université de Parakou, Bénin</p>
+                <p class="timeline-description">
+                  Undergraduate degree in agricultural economics. Comprehensive training in agricultural systems, economic theory, and development policy. Foundation for research interests in climate-sensitive agriculture and rural development.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Experience Timeline -->
+        <h2 style="margin-top: 3rem; margin-bottom: 2rem;" data-i18n="cv.experience">Professional Experience</h2>
+        
+        <div class="timeline">
+          <!-- PhD -->
+          <div class="timeline-item">
+            <div class="timeline-row">
+              <div class="timeline-content">
+                <div class="timeline-date">2025–Present</div>
+              </div>
+              <div class="timeline-marker"></div>
+              <div class="timeline-body">
+                <h3 class="timeline-title">PhD Candidate – Data Science & AI</h3>
+                <p class="timeline-org">École Polytechnique de Thiès (EPT) • LTISI Lab</p>
+                <p class="timeline-description">
+                  Conducting doctoral research integrating statistical rigor with machine learning for healthcare and development data. Focus areas: agricultural yield prediction, epidemiological surveillance, and causal inference in climate-sensitive contexts.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Current Role -->
+          <div class="timeline-item">
+            <div class="timeline-row">
+              <div class="timeline-content">
+                <div class="timeline-date">Feb 2025–Feb 2026</div>
+              </div>
+              <div class="timeline-marker"></div>
+              <div class="timeline-body">
+                <h3 class="timeline-title">Data Analyst</h3>
+                <p class="timeline-org">SCL (Société de Cultures Légumières) • Dakar</p>
+                <p class="timeline-description">
+                  Currently serving as data analyst providing insights for agricultural company operations. Responsibilities include data quality assessment, statistical analysis, and reporting for decision-makers in vegetable production.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Freelance -->
+          <div class="timeline-item">
+            <div class="timeline-row">
+              <div class="timeline-content">
+                <div class="timeline-date">Since 2023</div>
+              </div>
+              <div class="timeline-marker"></div>
+              <div class="timeline-body">
+                <h3 class="timeline-title">Responsable Technique (Data Scientist)</h3>
+                <p class="timeline-org">BDA Institute • Freelance</p>
+                <p class="timeline-description">
+                  Technical lead for data science projects. Design and implement ETL pipelines, develop predictive models, and architect data solutions. Clients across agriculture, health, and development sectors.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Consultant -->
+          <div class="timeline-item">
+            <div class="timeline-row">
+              <div class="timeline-content">
+                <div class="timeline-date">Nov 2024–Jan 2025</div>
+              </div>
+              <div class="timeline-marker"></div>
+              <div class="timeline-body">
+                <h3 class="timeline-title">Consultant Statisticien et Économiste</h3>
+                <p class="timeline-org">AKOME Service • ACET</p>
+                <p class="timeline-description">
+                  Provided statistical consulting and economic analysis. Conducted surveys, analyzed socioeconomic data, and generated policy recommendations for development organizations.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- CRDES -->
+          <div class="timeline-item">
+            <div class="timeline-row">
+              <div class="timeline-content">
+                <div class="timeline-date">Oct–Nov 2024</div>
+              </div>
+              <div class="timeline-marker"></div>
+              <div class="timeline-body">
+                <h3 class="timeline-title">Consultant Statisticien</h3>
+                <p class="timeline-org">CRDES (Centre de Recherche pour le Développement Économique et Social) • Dakar</p>
+                <p class="timeline-description">
+                  Conducted statistical analysis for development research projects. Focus on economic data analysis and policy insights for regional development strategies.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- PASEC -->
+          <div class="timeline-item">
+            <div class="timeline-row">
+              <div class="timeline-content">
+                <div class="timeline-date">Aug–Oct 2024</div>
+              </div>
+              <div class="timeline-marker"></div>
+              <div class="timeline-body">
+                <h3 class="timeline-title">Statisticien & Analyste de Données</h3>
+                <p class="timeline-org">CONFEMEN/PASEC</p>
+                <p class="timeline-description">
+                  Analyzed educational data from PASEC (Program d'Analyse des Systèmes Éducatifs). Conducted statistical modeling to identify factors affecting student performance and school outcomes across West Africa.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Teaching -->
+          <div class="timeline-item">
+            <div class="timeline-row">
+              <div class="timeline-content">
+                <div class="timeline-date">Aug 2022–Present</div>
+              </div>
+              <div class="timeline-marker"></div>
+              <div class="timeline-body">
+                <h3 class="timeline-title">Chargé de TD (Teaching Assistant)</h3>
+                <p class="timeline-org">Université de Thiès</p>
+                <p class="timeline-description">
+                  Deliver tutorials and practical sessions in statistics, data science, and programming. Mentor students and provide guidance on research methodology and technical skills development.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Certifications -->
+        <h2 style="margin-top: 3rem; margin-bottom: 2rem;">Certifications & Professional Development</h2>
+        
+        <div class="grid grid-2">
+          <div class="card">
+            <h3><i class="fas fa-certificate" style="color: var(--accent-primary); margin-right: 8px;"></i> 2026</h3>
+            <p><strong>Webinaire One Health</strong><br/>Institut Pasteur de Dakar (AFROSCREEN/FEF)</p>
+          </div>
+
+          <div class="card">
+            <h3><i class="fas fa-certificate" style="color: var(--accent-primary); margin-right: 8px;"></i> 2025</h3>
+            <p><strong>Google Analytics Individual Qualification</strong><br/>Google</p>
+          </div>
+
+          <div class="card">
+            <h3><i class="fas fa-certificate" style="color: var(--accent-secondary); margin-right: 8px;"></i> 2025</h3>
+            <p><strong>Institutionnalisation des Données Forestières</strong><br/>FAO</p>
+          </div>
+
+          <div class="card">
+            <h3><i class="fas fa-certificate" style="color: var(--accent-secondary); margin-right: 8px;"></i> 2024</h3>
+            <p><strong>Analyse de Données Avancée</strong><br/>Force-N</p>
+          </div>
+
+          <div class="card">
+            <h3><i class="fas fa-certificate" style="color: var(--accent-tertiary); margin-right: 8px;"></i> 2024</h3>
+            <p><strong>Surveillance Pollution Atmosphérique</strong><br/>UNECE</p>
+          </div>
+
+          <div class="card">
+            <h3><i class="fas fa-certificate" style="color: var(--accent-tertiary); margin-right: 8px;"></i> 2024</h3>
+            <p><strong>Modélisation Macroéconomique</strong><br/>UNECA</p>
+          </div>
+        </div>
+
+        <!-- Skills Section -->
+        <h2 style="margin-top: 3rem; margin-bottom: 2rem;" data-i18n="cv.skills">Skills & Expertise</h2>
+        
+        <div class="grid grid-3">
+          <div class="card">
+            <h4><i class="fas fa-flask-vial"></i> Biostatistics</h4>
+            <ul style="margin-left: 1rem; margin-top: 0.5rem; line-height: 1.8;">
+              <li>Survival analysis</li>
+              <li>Propensity score matching (PSM)</li>
+              <li>Difference-in-differences (DID)</li>
+              <li>Spatio-temporal modeling</li>
+              <li>Regression models (linear, logistic, Poisson)</li>
             </ul>
-          </p>
-        </div>
-
-        <!-- Experience 2 -->
-        <div class="experience-card">
-          <div class="experience-header">
-            <div>
-              <h3 class="experience-title">Data Analyst</h3>
-              <p class="experience-organization">SCL (Société de Cultures Légumières)</p>
-            </div>
-            <span class="experience-date">Feb 2026 – Feb 2027</span>
           </div>
-          <p class="experience-description">
-            <ul>
-              <li>Data integration and analytics using SQL, Python, and Excel</li>
-              <li>Internal Data Lake management and optimization</li>
-              <li>Power BI dashboard development and ETL automation</li>
-              <li>Machine Learning proof-of-concepts and model evaluation</li>
-              <li>Data governance implementation with Pipefy P2P workflows</li>
+
+          <div class="card">
+            <h4><i class="fas fa-code"></i> Programming Languages</h4>
+            <ul style="margin-left: 1rem; margin-top: 0.5rem; line-height: 1.8;">
+              <li>R (Advanced)</li>
+              <li>Python (pandas, scikit-learn, statsmodels)</li>
+              <li>SQL</li>
+              <li>Stata</li>
+              <li>SPSS</li>
             </ul>
-          </p>
-        </div>
-
-        <!-- Experience 3 -->
-        <div class="experience-card">
-          <div class="experience-header">
-            <div>
-              <h3 class="experience-title">Statistical Consultant</h3>
-              <p class="experience-organization">AKOME/ACET</p>
-            </div>
-            <span class="experience-date">Nov 2024 – Jan 2025</span>
           </div>
-          <p class="experience-description">
-            <ul>
-              <li>Public policy impact evaluation and statistical analysis</li>
+
+          <div class="card">
+            <h4><i class="fas fa-brain"></i> Machine Learning</h4>
+            <ul style="margin-left: 1rem; margin-top: 0.5rem; line-height: 1.8;">
+              <li>Deep Learning (LSTM, CNN)</li>
+              <li>NLP</li>
+              <li>Anomaly detection</li>
+              <li>Predictive modeling</li>
+              <li>Model validation</li>
             </ul>
-          </p>
-        </div>
-
-        <!-- Experience 4 -->
-        <div class="experience-card">
-          <div class="experience-header">
-            <div>
-              <h3 class="experience-title">Statistical Consultant</h3>
-              <p class="experience-organization">CRDES</p>
-            </div>
-            <span class="experience-date">Oct – Nov 2024</span>
           </div>
-          <p class="experience-description">
-            <ul>
-              <li>Women and children empowerment impact evaluations</li>
-              <li>Statistical analysis using Stata</li>
+
+          <div class="card">
+            <h4><i class="fas fa-server"></i> Data Engineering</h4>
+            <ul style="margin-left: 1rem; margin-top: 0.5rem; line-height: 1.8;">
+              <li>ETL/ELT pipelines</li>
+              <li>Apache Spark</li>
+              <li>Airflow</li>
+              <li>dbt</li>
+              <li>REST APIs & GraphQL</li>
             </ul>
-          </p>
-        </div>
-
-        <!-- Experience 5 -->
-        <div class="experience-card">
-          <div class="experience-header">
-            <div>
-              <h3 class="experience-title">Statistician & Data Analyst</h3>
-              <p class="experience-organization">CONFEMEN/PASEC</p>
-            </div>
-            <span class="experience-date">Aug – Oct 2024</span>
           </div>
-          <p class="experience-description">
-            <ul>
-              <li>Multi-country education dataset harmonization</li>
-              <li>Data quality assessment and statistical analysis</li>
+
+          <div class="card">
+            <h4><i class="fas fa-cloud"></i> Cloud Platforms</h4>
+            <ul style="margin-left: 1rem; margin-top: 0.5rem; line-height: 1.8;">
+              <li>Snowflake</li>
+              <li>Google BigQuery</li>
+              <li>Databricks</li>
+              <li>Azure Synapse</li>
+              <li>Docker & containerization</li>
             </ul>
-          </p>
-        </div>
-
-        <!-- Experience 6 -->
-        <div class="experience-card">
-          <div class="experience-header">
-            <div>
-              <h3 class="experience-title">Teaching Assistant</h3>
-              <p class="experience-organization">Université de Thiès</p>
-            </div>
-            <span class="experience-date">Aug 2022 – Present</span>
           </div>
-          <p class="experience-description">
-            <ul>
-              <li>Tutorials in economics and statistics</li>
-              <li>Programming instruction: Python, Stata, R, and Excel</li>
-              <li>Thesis supervision and student mentoring</li>
+
+          <div class="card">
+            <h4><i class="fas fa-chart-bar"></i> Business Intelligence</h4>
+            <ul style="margin-left: 1rem; margin-top: 0.5rem; line-height: 1.8;">
+              <li>Power BI & DAX</li>
+              <li>Tableau</li>
+              <li>R Shiny</li>
+              <li>Qlik</li>
+              <li>Data storytelling</li>
             </ul>
-          </p>
-        </div>
-      </div>
-
-      <!-- Education Section -->
-      <div class="cv-section">
-        <div class="section-header">
-          <div class="section-icon">
-            <i class="fas fa-graduation-cap"></i>
-          </div>
-          <h2 class="section-title">Education</h2>
-        </div>
-
-        <div class="education-entry">
-          <p class="education-year">2025 – Present</p>
-          <h3 class="education-degree">PhD in Mathematical Engineering & Intelligent Systems (IMSI)</h3>
-          <p class="education-institution">École Polytechnique de Thiès, LTISI Lab</p>
-        </div>
-
-        <div class="education-entry">
-          <p class="education-year">2021 – 2023</p>
-          <h3 class="education-degree">Master's in Data Science</h3>
-          <p class="education-institution">Université de Thiès — Statistical Modelling & Econometrics</p>
-        </div>
-
-        <div class="education-entry">
-          <p class="education-year">2018 – 2021</p>
-          <h3 class="education-degree">Master's in Economics</h3>
-          <p class="education-institution">Université de Parakou, Benin</p>
-        </div>
-
-        <div class="education-entry">
-          <p class="education-year">2016 – 2018</p>
-          <h3 class="education-degree">Bachelor's in Agricultural Economics</h3>
-          <p class="education-institution">Université de Parakou</p>
-        </div>
-
-        <div class="education-entry">
-          <p class="education-year">2015 – 2016</p>
-          <h3 class="education-degree">High School Diploma, Scientific Track (Series D)</h3>
-          <p class="education-institution">Senegal</p>
-        </div>
-      </div>
-
-      <!-- Technical Skills Section -->
-      <div class="cv-section">
-        <div class="section-header">
-          <div class="section-icon">
-            <i class="fas fa-code"></i>
-          </div>
-          <h2 class="section-title">Technical Skills</h2>
-        </div>
-
-        <div class="skills-category">
-          <p class="skills-category-title">ML & MLOps</p>
-          <div class="skills-grid">
-            <span class="skill-chip">scikit-learn</span>
-            <span class="skill-chip">TensorFlow</span>
-            <span class="skill-chip">PyTorch</span>
-            <span class="skill-chip">MLOps</span>
-          </div>
-        </div>
-
-        <div class="skills-category">
-          <p class="skills-category-title">Programming Languages</p>
-          <div class="skills-grid">
-            <span class="skill-chip">Python</span>
-            <span class="skill-chip">R</span>
-            <span class="skill-chip">SQL</span>
-            <span class="skill-chip">Stata</span>
-            <span class="skill-chip">SPSS</span>
-          </div>
-        </div>
-
-        <div class="skills-category">
-          <p class="skills-category-title">Business Intelligence</p>
-          <div class="skills-grid">
-            <span class="skill-chip">Power BI</span>
-            <span class="skill-chip">Tableau</span>
-            <span class="skill-chip">Qlik</span>
-            <span class="skill-chip">DAX</span>
-          </div>
-        </div>
-
-        <div class="skills-category">
-          <p class="skills-category-title">Data Engineering</p>
-          <div class="skills-grid">
-            <span class="skill-chip">ETL/ELT</span>
-            <span class="skill-chip">REST APIs</span>
-            <span class="skill-chip">Power Automate</span>
-          </div>
-        </div>
-
-        <div class="skills-category">
-          <p class="skills-category-title">Big Data & Cloud</p>
-          <div class="skills-grid">
-            <span class="skill-chip">Apache Spark</span>
-            <span class="skill-chip">Airflow</span>
-            <span class="skill-chip">dbt</span>
-            <span class="skill-chip">Snowflake</span>
-            <span class="skill-chip">Databricks</span>
-            <span class="skill-chip">Azure Synapse</span>
-            <span class="skill-chip">BigQuery</span>
-          </div>
-        </div>
-
-        <div class="skills-category">
-          <p class="skills-category-title">DevOps & Tools</p>
-          <div class="skills-grid">
-            <span class="skill-chip">Docker</span>
-            <span class="skill-chip">Git/GitHub</span>
-            <span class="skill-chip">Power Apps</span>
-          </div>
-        </div>
-
-        <div class="skills-category">
-          <p class="skills-category-title">Governance & Other</p>
-          <div class="skills-grid">
-            <span class="skill-chip">GDPR</span>
-            <span class="skill-chip">Excel (Advanced)</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Certifications Section -->
-      <div class="cv-section">
-        <div class="section-header">
-          <div class="section-icon">
-            <i class="fas fa-certificate"></i>
-          </div>
-          <h2 class="section-title">Certifications</h2>
-        </div>
-
-        <ul class="certifications-list">
-          <li class="certification-item">
-            <div class="certification-icon"><i class="fas fa-check-circle"></i></div>
-            <div class="certification-content">
-              <p class="certification-year">2025</p>
-              <h3 class="certification-name">Google Analytics</h3>
-              <p class="certification-issuer">Google</p>
-            </div>
-          </li>
-
-          <li class="certification-item">
-            <div class="certification-icon"><i class="fas fa-check-circle"></i></div>
-            <div class="certification-content">
-              <p class="certification-year">2025</p>
-              <h3 class="certification-name">Forest Data</h3>
-              <p class="certification-issuer">FAO (Food and Agriculture Organization)</p>
-            </div>
-          </li>
-
-          <li class="certification-item">
-            <div class="certification-icon"><i class="fas fa-check-circle"></i></div>
-            <div class="certification-content">
-              <p class="certification-year">2024</p>
-              <h3 class="certification-name">Advanced Data Analysis</h3>
-              <p class="certification-issuer">Force-N</p>
-            </div>
-          </li>
-
-          <li class="certification-item">
-            <div class="certification-icon"><i class="fas fa-check-circle"></i></div>
-            <div class="certification-content">
-              <p class="certification-year">2024</p>
-              <h3 class="certification-name">Air Pollution Monitoring</h3>
-              <p class="certification-issuer">UNECE (United Nations Economic Commission for Europe)</p>
-            </div>
-          </li>
-
-          <li class="certification-item">
-            <div class="certification-icon"><i class="fas fa-check-circle"></i></div>
-            <div class="certification-content">
-              <p class="certification-year">2024</p>
-              <h3 class="certification-name">Macroeconomic Modelling</h3>
-              <p class="certification-issuer">UNECA (United Nations Economic Commission for Africa)</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Publications Section -->
-      <div class="cv-section">
-        <div class="section-header">
-          <div class="section-icon">
-            <i class="fas fa-book"></i>
-          </div>
-          <h2 class="section-title">Publications</h2>
-        </div>
-
-        <ul class="publications-list">
-          <li class="publication-item">
-            <p class="publication-year">2026</p>
-            <h3 class="publication-title">Hybrid AI models for Rift Valley Fever surveillance</h3>
-            <p class="publication-meta">Working Paper, LTISI Lab, École Polytechnique de Thiès</p>
-          </li>
-
-          <li class="publication-item">
-            <p class="publication-year">2025</p>
-            <h3 class="publication-title">Predictive modelling of school dropout in Benin</h3>
-            <p class="publication-meta">Journal of Statistical and Social Engineering Dynamics (JSSED)</p>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Languages Section -->
-      <div class="cv-section">
-        <div class="section-header">
-          <div class="section-icon">
-            <i class="fas fa-globe"></i>
-          </div>
-          <h2 class="section-title">Languages</h2>
-        </div>
-
-        <div class="languages-list">
-          <div class="language-item">
-            <h3 class="language-name">French</h3>
-            <p class="language-level">Native Speaker</p>
-          </div>
-
-          <div class="language-item">
-            <h3 class="language-name">English</h3>
-            <p class="language-level">Professional Working Proficiency</p>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
   <footer>
-    <div class="footer-inner">
-      <div class="footer-col">
-        <h4>Slim Agbahoungba</h4>
-        <p>AI & Data Scientist<br>PhD Candidate in Intelligent Systems<br>École Polytechnique de Thiès</p>
+    <div class="footer-content">
+      <div class="footer-main">
+        <div class="footer-section">
+          <h3 data-i18n="footer.sitemap">Sitemap</h3>
+          <div class="footer-links">
+            <a href="index.html" class="footer-link" data-i18n="nav.home">Home</a>
+            <a href="portfolio.html" class="footer-link" data-i18n="nav.portfolio">Portfolio</a>
+            <a href="publications.html" class="footer-link" data-i18n="nav.publications">Publications</a>
+            <a href="cv.html" class="footer-link" data-i18n="nav.cv">CV</a>
+            <a href="contact.html" class="footer-link" data-i18n="nav.contact">Contact</a>
+            <a href="faq.html" class="footer-link" data-i18n="nav.faq">FAQ</a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h3 data-i18n="footer.connect">Connect</h3>
+          <div class="footer-links">
+            <a href="https://www.linkedin.com/in/zeferino-agb/" class="footer-link" target="_blank" rel="noopener">
+              <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+            <a href="https://github.com/slimagb" class="footer-link" target="_blank" rel="noopener">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+            <a href="https://scholar.google.com/" class="footer-link" target="_blank" rel="noopener">
+              <i class="fas fa-graduation-cap"></i> Google Scholar
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h3 data-i18n="footer.follow">Follow</h3>
+          <div class="footer-social">
+            <a href="https://www.linkedin.com/in/zeferino-agb/" class="social-link" target="_blank" rel="noopener" title="LinkedIn">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/slimagb" class="social-link" target="_blank" rel="noopener" title="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://scholar.google.com/" class="social-link" target="_blank" rel="noopener" title="Google Scholar">
+              <i class="fas fa-graduation-cap"></i>
+            </a>
+          </div>
+        </div>
       </div>
-      <div class="footer-col">
-        <h4>Navigation</h4>
-        <a href="index.html">Home</a>
-        <a href="works.html">Works</a>
-        <a href="events.html">Events</a>
-        <a href="cv.html">CV</a>
-        <a href="faq.html">FAQ</a>
-      </div>
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <a href="mailto:zeferinoslim1@gmail.com"><i class="fas fa-envelope"></i> zeferinoslim1@gmail.com</a>
-        <a href="https://www.linkedin.com/in/zeferino-agb/" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
-        <a href="https://github.com/slimagb" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>&copy; 2026 Slim Zéférino S. Agbahoungba</span>
-      <div class="footer-socials">
-        <a href="https://scholar.google.com/" target="_blank"><i class="fas fa-graduation-cap"></i></a>
-        <a href="https://www.linkedin.com/in/zeferino-agb/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://github.com/slimagb" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="mailto:zeferinoslim1@gmail.com"><i class="fas fa-envelope"></i></a>
+
+      <div class="footer-bottom">
+        <div class="footer-credits" data-i18n="footer.credits">
+          Designed & Built by Slim Zéférino S. AGBAHOUNGBA | Data Science Portfolio
+        </div>
+        <div style="color: var(--text-secondary); font-size: 0.85rem;">
+          <span id="footer-year"></span> © All Rights Reserved
+        </div>
       </div>
     </div>
   </footer>
 
-  <!-- Scroll to Top Button -->
-  <button class="scroll-top" id="scrollTop"><i class="fas fa-arrow-up"></i></button>
-
-  <!-- Main JavaScript -->
+  <script src="assets/js/i18n.js"></script>
   <script src="assets/js/main.js"></script>
+  <script>
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>

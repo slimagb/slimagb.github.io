@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Slim Zéférino S. AGBAHOUNGBA</title>
+  <meta name="description" content="Get in touch with Slim Zéférino S. AGBAHOUNGBA for collaboration, consulting, or research opportunities.">
+  <meta property="og:title" content="Contact - Slim Zéférino S. AGBAHOUNGBA">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://slimagb.github.io/contact.html">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="particles"></div>
+
+  <header>
+    <nav class="container">
+      <a href="index.html" class="nav-logo">SA</a>
+      
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link" data-i18n="nav.home">Home</a></li>
+        <li><a href="portfolio.html" class="nav-link" data-i18n="nav.portfolio">Portfolio</a></li>
+        <li><a href="publications.html" class="nav-link" data-i18n="nav.publications">Publications</a></li>
+        <li><a href="cv.html" class="nav-link" data-i18n="nav.cv">CV</a></li>
+        <li><a href="contact.html" class="nav-link" data-i18n="nav.contact">Contact</a></li>
+        <li><a href="faq.html" class="nav-link" data-i18n="nav.faq">FAQ</a></li>
+      </ul>
+
+      <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+
+      <div class="nav-controls">
+        <div class="lang-switcher">
+          <button class="lang-button">
+            <span id="current-lang">EN</span>
+            <i class="fas fa-chevron-down" style="font-size: 0.75rem; margin-left: 4px;"></i>
+          </button>
+          <div class="lang-dropdown">
+            <button class="lang-option active" data-lang="en">English</button>
+            <button class="lang-option" data-lang="fr">Français</button>
+            <button class="lang-option" data-lang="es">Español</button>
+          </div>
+        </div>
+        <button id="theme-toggle" class="btn-icon toggle" title="Toggle theme">
+          <i class="fas fa-sun"></i>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h1 data-i18n="contact.title">Get in Touch</h1>
+          <p class="section-subtitle" data-i18n="contact.subtitle">Let's connect and explore collaboration opportunities</p>
+        </div>
+
+        <div class="contact-content">
+          <div class="contact-info">
+            <h2 style="margin-bottom: 2rem;">Contact Information</h2>
+
+            <div class="contact-method">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-details">
+                <p class="contact-label" data-i18n="contact.email">Email</p>
+                <p class="contact-value">slim.agbahoungba@ept.edu.sn</p>
+              </div>
+            </div>
+
+            <div class="contact-method">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="contact-details">
+                <p class="contact-label" data-i18n="contact.location">Location</p>
+                <p class="contact-value">Thiès, Sénégal</p>
+              </div>
+            </div>
+
+            <div class="contact-method">
+              <div class="contact-icon">
+                <i class="fab fa-linkedin"></i>
+              </div>
+              <div class="contact-details">
+                <p class="contact-label" data-i18n="contact.linkedin">LinkedIn</p>
+                <a href="https://www.linkedin.com/in/zeferino-agb/" class="contact-value" target="_blank" rel="noopener">
+                  @zeferino-agb <i class="fas fa-external-link-alt" style="font-size: 0.75rem; margin-left: 4px;"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="contact-method">
+              <div class="contact-icon">
+                <i class="fab fa-github"></i>
+              </div>
+              <div class="contact-details">
+                <p class="contact-label" data-i18n="contact.github">GitHub</p>
+                <a href="https://github.com/slimagb" class="contact-value" target="_blank" rel="noopener">
+                  @slimagb <i class="fas fa-external-link-alt" style="font-size: 0.75rem; margin-left: 4px;"></i>
+                </a>
+              </div>
+            </div>
+
+            <div style="margin-top: 2rem; padding: 1.5rem; background: var(--surface-secondary); border-radius: var(--radius-md);">
+              <h4 style="margin-bottom: 1rem;">Response Time</h4>
+              <p style="color: var(--text-secondary); font-size: 0.95rem;">
+                I typically respond to inquiries within 48 hours. For urgent matters, please mention "URGENT" in your email subject.
+              </p>
+            </div>
+          </div>
+
+          <div class="contact-form">
+            <form id="contact-form" action="https://formspree.io/f/xpznqkdl" method="POST">
+              <div class="form-group">
+                <label for="name" class="form-label" data-i18n="contact.form.name">Your Name</label>
+                <input 
+                  type="text" 
+                  id="name" 
+                  name="name" 
+                  class="form-input" 
+                  required 
+                  placeholder="Your Name"
+                  data-i18n="contact.form.name"
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="email" class="form-label" data-i18n="contact.form.email">Your Email</label>
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="email" 
+                  class="form-input" 
+                  required 
+                  placeholder="your.email@example.com"
+                  data-i18n="contact.form.email"
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="subject" class="form-label" data-i18n="contact.form.subject">Subject</label>
+                <input 
+                  type="text" 
+                  id="subject" 
+                  name="subject" 
+                  class="form-input" 
+                  required 
+                  placeholder="Subject of your message"
+                  data-i18n="contact.form.subject"
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="message" class="form-label" data-i18n="contact.form.message">Message</label>
+                <textarea 
+                  id="message" 
+                  name="message" 
+                  class="form-textarea" 
+                  required 
+                  placeholder="Your message here..."
+                  data-i18n="contact.form.message"
+                ></textarea>
+              </div>
+
+              <button type="submit" class="form-submit btn btn-primary" data-i18n="contact.form.send">
+                <i class="fas fa-paper-plane"></i>
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Collaboration Section -->
+    <section class="section" style="background: var(--surface-secondary);">
+      <div class="container">
+        <div class="section-header">
+          <h2>Let's Collaborate</h2>
+          <p class="section-subtitle">Open to research partnerships, consulting projects, and knowledge exchange</p>
+        </div>
+
+        <div class="grid grid-3">
+          <div class="card">
+            <h3><i class="fas fa-flask-vial"></i> Research Collaboration</h3>
+            <p>Interested in joint research projects? I'm open to collaborations in biostatistics, epidemiology, machine learning, and development analytics.</p>
+          </div>
+
+          <div class="card">
+            <h3><i class="fas fa-briefcase"></i> Consulting & Advisory</h3>
+            <p>Available for consulting work on data science strategy, statistical analysis, and analytics architecture for organizations and institutions.</p>
+          </div>
+
+          <div class="card">
+            <h3><i class="fas fa-graduation-cap"></i> Speaking & Training</h3>
+            <p>Happy to deliver workshops, seminars, or training sessions on data science, biostatistics, and machine learning applications.</p>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 2rem;">
+          <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+            Whether you're interested in collaboration, have questions about my work, or just want to chat about data science and development—feel free to reach out!
+          </p>
+          <a href="#contact-form" class="btn btn-primary" onclick="document.getElementById('name').focus(); return false;">
+            <i class="fas fa-envelope"></i> Send a Message
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-main">
+        <div class="footer-section">
+          <h3 data-i18n="footer.sitemap">Sitemap</h3>
+          <div class="footer-links">
+            <a href="index.html" class="footer-link" data-i18n="nav.home">Home</a>
+            <a href="portfolio.html" class="footer-link" data-i18n="nav.portfolio">Portfolio</a>
+            <a href="publications.html" class="footer-link" data-i18n="nav.publications">Publications</a>
+            <a href="cv.html" class="footer-link" data-i18n="nav.cv">CV</a>
+            <a href="contact.html" class="footer-link" data-i18n="nav.contact">Contact</a>
+            <a href="faq.html" class="footer-link" data-i18n="nav.faq">FAQ</a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h3 data-i18n="footer.connect">Connect</h3>
+          <div class="footer-links">
+            <a href="https://www.linkedin.com/in/zeferino-agb/" class="footer-link" target="_blank" rel="noopener">
+              <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+            <a href="https://github.com/slimagb" class="footer-link" target="_blank" rel="noopener">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+            <a href="https://scholar.google.com/" class="footer-link" target="_blank" rel="noopener">
+              <i class="fas fa-graduation-cap"></i> Google Scholar
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h3 data-i18n="footer.follow">Follow</h3>
+          <div class="footer-social">
+            <a href="https://www.linkedin.com/in/zeferino-agb/" class="social-link" target="_blank" rel="noopener" title="LinkedIn">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/slimagb" class="social-link" target="_blank" rel="noopener" title="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://scholar.google.com/" class="social-link" target="_blank" rel="noopener" title="Google Scholar">
+              <i class="fas fa-graduation-cap"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-credits" data-i18n="footer.credits">
+          Designed & Built by Slim Zéférino S. AGBAHOUNGBA | Data Science Portfolio
+        </div>
+        <div style="color: var(--text-secondary); font-size: 0.85rem;">
+          <span id="footer-year"></span> © All Rights Reserved
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
