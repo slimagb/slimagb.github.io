@@ -3,558 +3,246 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Slim Agbahoungba | AI & Data Scientist | PhD Candidate</title>
-  <meta name="description" content="Slim Agbahoungba - AI & Data Scientist and PhD Candidate in Intelligent Systems at École Polytechnique de Thiès">
-  <meta name="keywords" content="AI, Data Science, Machine Learning, PhD, Intelligent Systems, Senegal">
-  <meta name="author" content="Slim Zéférino S. Agbahoungba">
-
-  <!-- Google Fonts -->
+  <title>Slim Zéférino S. AGBAHOUNGBA - Data Scientist & Biostatistician</title>
+  <meta name="description" content="Biostatisticien Clinique, Data Scientist & PhD Candidate in AI. Specializing in healthcare analytics, epidemiology & machine learning.">
+  <meta name="keywords" content="data science, biostatistics, machine learning, epidemiology, Africa, Senegal">
+  <meta name="author" content="Slim Zéférino S. AGBAHOUNGBA">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Slim Zéférino S. AGBAHOUNGBA - Data Scientist & Biostatistician">
+  <meta property="og:description" content="Integrating Statistical Rigor with Machine Learning Innovation for Healthcare & Development Data">
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/85189668?v=4">
+  <meta property="og:url" content="https://slimagb.github.io/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Slim Zéférino S. AGBAHOUNGBA">
+  <meta name="twitter:description" content="Data Scientist | Biostatistician | PhD Candidate">
+  <link rel="canonical" href="https://slimagb.github.io/">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-
-  <!-- Font Awesome 6.5.1 -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
-
-  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap">
   <link rel="stylesheet" href="assets/css/style.css">
-
-  <!-- Page-specific Styles -->
-  <style>
-    /* Home Page Specific Styles */
-
-    /* Hero Section Layout */
-    .page-hero {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
-      padding: 4rem 0;
-      position: relative;
-      z-index: 2;
-    }
-
-    /* Hero Left Section */
-    .hero-left {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .hero-greeting {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.875rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent-cyan);
-      margin-bottom: 0.5rem;
-    }
-
-    .hero-name {
-      font-size: 3.5rem;
-      font-weight: 800;
-      line-height: 1.2;
-      margin: 0;
-    }
-
-    .hero-name .gradient {
-      background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-magenta) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .hero-subtitle {
-      font-size: 1.25rem;
-      color: var(--text-secondary);
-      font-weight: 400;
-      margin: 0.5rem 0 1rem 0;
-    }
-
-    /* Typing Effect Container */
-    #typingText {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 1.1rem;
-      font-weight: 500;
-      color: var(--accent-cyan);
-      min-height: 1.8rem;
-      position: relative;
-    }
-
-    #typingText::after {
-      content: '|';
-      animation: blink 1s infinite;
-      margin-left: 0.25rem;
-    }
-
-    @keyframes blink {
-      0%, 50% {
-        opacity: 1;
-      }
-      51%, 100% {
-        opacity: 0;
-      }
-    }
-
-    .hero-bio {
-      font-size: 1rem;
-      line-height: 1.6;
-      color: var(--text-secondary);
-      max-width: 90%;
-    }
-
-    /* Tags Section */
-    .hero-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin: 1.5rem 0;
-    }
-
-    .tag {
-      display: inline-block;
-      padding: 0.5rem 1rem;
-      background: rgba(0, 255, 255, 0.1);
-      border: 1px solid rgba(0, 255, 255, 0.3);
-      border-radius: 2rem;
-      font-size: 0.875rem;
-      color: var(--accent-cyan);
-      font-weight: 500;
-      transition: all 0.3s ease;
-    }
-
-    .tag:hover {
-      background: rgba(0, 255, 255, 0.2);
-      border-color: var(--accent-cyan);
-      transform: translateY(-2px);
-    }
-
-    /* Hero Buttons */
-    .hero-buttons {
-      display: flex;
-      gap: 1rem;
-      margin-top: 2rem;
-    }
-
-    .btn {
-      padding: 0.875rem 2rem;
-      border-radius: 0.5rem;
-      font-size: 1rem;
-      font-weight: 600;
-      text-decoration: none;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      border: none;
-      font-family: 'Inter', sans-serif;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-magenta) 100%);
-      color: var(--bg-dark);
-      box-shadow: 0 8px 24px rgba(0, 255, 255, 0.3);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 32px rgba(0, 255, 255, 0.4);
-    }
-
-    .btn-secondary {
-      background: transparent;
-      color: var(--accent-cyan);
-      border: 2px solid var(--accent-cyan);
-    }
-
-    .btn-secondary:hover {
-      background: rgba(0, 255, 255, 0.1);
-      transform: translateY(-2px);
-    }
-
-    /* Hero Right Section - Photo Frame */
-    .hero-right {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-    }
-
-    .photo-frame {
-      width: 300px;
-      height: 380px;
-      background: linear-gradient(135deg, rgba(0, 255, 255, 0.1) 0%, rgba(255, 0, 255, 0.1) 100%);
-      border: 2px solid var(--accent-cyan);
-      border-radius: 24px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 0 60px rgba(0, 255, 255, 0.2);
-    }
-
-    .photo-frame::before {
-      content: '';
-      position: absolute;
-      inset: -15px;
-      background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-magenta) 100%);
-      opacity: 0.15;
-      border-radius: 24px;
-      z-index: -1;
-    }
-
-    .photo-frame i {
-      font-size: 6rem;
-      color: var(--accent-cyan);
-      opacity: 0.3;
-    }
-
-    .status-badge {
-      position: absolute;
-      bottom: 2rem;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      padding: 0.75rem 1.5rem;
-      background: rgba(20, 20, 30, 0.9);
-      border: 1px solid rgba(0, 255, 255, 0.3);
-      border-radius: 2rem;
-      font-size: 0.875rem;
-      color: var(--text-primary);
-      backdrop-filter: blur(10px);
-    }
-
-    .pulse-dot {
-      width: 10px;
-      height: 10px;
-      background: #00ff00;
-      border-radius: 50%;
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% {
-        opacity: 1;
-        transform: scale(1);
-      }
-      50% {
-        opacity: 0.6;
-        transform: scale(1.2);
-      }
-    }
-
-    /* Stats Bar */
-    .stats-bar {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-      margin-top: 4rem;
-      padding-top: 3rem;
-      border-top: 1px solid rgba(0, 255, 255, 0.1);
-    }
-
-    .stat-item {
-      text-align: center;
-    }
-
-    .stat-number {
-      font-size: 2.5rem;
-      font-weight: 800;
-      color: var(--accent-cyan);
-      font-family: 'JetBrains Mono', monospace;
-      margin-bottom: 0.5rem;
-    }
-
-    .stat-label {
-      font-size: 0.875rem;
-      color: var(--text-secondary);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      font-weight: 600;
-    }
-
-    /* Background Elements */
-    .bg-ambient {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-      pointer-events: none;
-      overflow: hidden;
-    }
-
-    .bg-grid {
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(0deg, transparent 24%, rgba(0, 255, 255, 0.05) 25%, rgba(0, 255, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(0, 255, 255, 0.05) 75%, rgba(0, 255, 255, 0.05) 76%, transparent 77%, transparent),
-        linear-gradient(90deg, transparent 24%, rgba(0, 255, 255, 0.05) 25%, rgba(0, 255, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(0, 255, 255, 0.05) 75%, rgba(0, 255, 255, 0.05) 76%, transparent 77%, transparent);
-      background-size: 50px 50px;
-    }
-
-    .orb-1, .orb-2, .orb-3 {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(100px);
-      opacity: 0.1;
-    }
-
-    .orb-1 {
-      width: 400px;
-      height: 400px;
-      background: var(--accent-cyan);
-      top: -100px;
-      right: -50px;
-      animation: float 20s ease-in-out infinite;
-    }
-
-    .orb-2 {
-      width: 300px;
-      height: 300px;
-      background: var(--accent-magenta);
-      bottom: -50px;
-      left: 10%;
-      animation: float 25s ease-in-out infinite reverse;
-    }
-
-    .orb-3 {
-      width: 350px;
-      height: 350px;
-      background: var(--accent-cyan);
-      top: 50%;
-      left: 50%;
-      animation: float 30s ease-in-out infinite;
-    }
-
-    @keyframes float {
-      0%, 100% {
-        transform: translate(0, 0);
-      }
-      33% {
-        transform: translate(-30px, -30px);
-      }
-      66% {
-        transform: translate(30px, 30px);
-      }
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .page-hero {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        padding: 2rem 0;
-      }
-
-      .hero-name {
-        font-size: 2.5rem;
-      }
-
-      .hero-subtitle {
-        font-size: 1rem;
-      }
-
-      .hero-buttons {
-        flex-direction: column;
-      }
-
-      .btn {
-        width: 100%;
-        justify-content: center;
-      }
-
-      .stats-bar {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
-      }
-
-      .hero-bio {
-        max-width: 100%;
-      }
-
-      .photo-frame {
-        width: 250px;
-        height: 320px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .hero-name {
-        font-size: 2rem;
-      }
-
-      .hero-tags {
-        gap: 0.5rem;
-      }
-
-      .tag {
-        padding: 0.4rem 0.8rem;
-        font-size: 0.75rem;
-      }
-
-      .stats-bar {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-      }
-
-      .stat-number {
-        font-size: 2rem;
-      }
-    }
-  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Slim Zéférino S. AGBAHOUNGBA",
+    "url": "https://slimagb.github.io",
+    "image": "https://avatars.githubusercontent.com/u/85189668?v=4",
+    "jobTitle": "Data Scientist & Biostatistician",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "École Polytechnique de Thiès"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/zeferino-agb/",
+      "https://github.com/slimagb",
+      "https://scholar.google.com/"
+    ]
+  }
+  </script>
 </head>
 <body>
-  <!-- Background Ambient Elements -->
-  <div class="bg-ambient">
-    <div class="bg-grid"></div>
-    <div class="orb-1"></div>
-    <div class="orb-2"></div>
-    <div class="orb-3"></div>
-  </div>
+  <div class="particles"></div>
 
-  <!-- Navigation -->
-  <nav id="navbar">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo">
-        <span class="logo-mark">SA</span> Slim Agbahoungba
-      </a>
-      <div class="nav-links" id="navLinks">
-        <a href="index.html"><i class="fas fa-home"></i>Home</a>
-        <a href="works.html"><i class="fas fa-flask"></i>Works</a>
-        <a href="events.html"><i class="fas fa-calendar-alt"></i>Events</a>
-        <a href="cv.html"><i class="fas fa-file-alt"></i>CV</a>
-        <a href="faq.html"><i class="fas fa-question-circle"></i>FAQ</a>
-      </div>
-      <button class="menu-toggle" id="menuToggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
-      <div class="nav-socials">
-        <a href="https://scholar.google.com/" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
-        <a href="https://www.linkedin.com/in/zeferino-agb/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://github.com/slimagb" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-        <a href="mailto:zeferinoslim1@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-      </div>
-    </div>
-  </nav>
+  <header>
+    <nav class="container">
+      <a href="index.html" class="nav-logo">SA</a>
+      
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link" data-i18n="nav.home">Home</a></li>
+        <li><a href="portfolio.html" class="nav-link" data-i18n="nav.portfolio">Portfolio</a></li>
+        <li><a href="publications.html" class="nav-link" data-i18n="nav.publications">Publications</a></li>
+        <li><a href="cv.html" class="nav-link" data-i18n="nav.cv">CV</a></li>
+        <li><a href="contact.html" class="nav-link" data-i18n="nav.contact">Contact</a></li>
+        <li><a href="faq.html" class="nav-link" data-i18n="nav.faq">FAQ</a></li>
+      </ul>
 
-  <!-- Main Content -->
-  <main class="page-transition">
-    <section class="container">
-      <!-- Hero Section -->
-      <div class="page-hero">
-        <!-- Left Section -->
-        <div class="hero-left">
-          <div class="hero-greeting">PhD Candidate · AI & Data Scientist</div>
+      <button class="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </button>
 
-          <h1 class="hero-name">
-            Slim Zéférino S.<br>
-            <span class="gradient">Agbahoungba</span>
-          </h1>
-
-          <p class="hero-subtitle">AI & Data Scientist — PhD in Intelligent Systems</p>
-
-          <div id="typingText" data-texts='["Machine Learning", "Spatio-temporal Modelling", "Data Engineering", "Epidemiological AI"]'></div>
-
-          <p class="hero-bio">
-            I'm a PhD candidate at École Polytechnique de Thiès (LTISI Lab) in Senegal, specializing in AI and data science. My research focuses on machine learning, spatio-temporal modelling, and applications in epidemiology. I'm passionate about transforming data into actionable insights and advancing intelligent systems for real-world impact.
-          </p>
-
-          <div class="hero-tags">
-            <span class="tag">Machine Learning</span>
-            <span class="tag">Deep Learning</span>
-            <span class="tag">Spatio-temporal Modelling</span>
-            <span class="tag">Data Engineering</span>
-            <span class="tag">Epidemiology</span>
-            <span class="tag">MLOps</span>
-            <span class="tag">NLP</span>
-          </div>
-
-          <div class="hero-buttons">
-            <a href="works.html" class="btn btn-primary">
-              <i class="fas fa-flask"></i> Explore Research
-            </a>
-            <a href="cv.html" class="btn btn-secondary">
-              <i class="fas fa-download"></i> Download CV
-            </a>
+      <div class="nav-controls">
+        <div class="lang-switcher">
+          <button class="lang-button">
+            <span id="current-lang">EN</span>
+            <i class="fas fa-chevron-down" style="font-size: 0.75rem; margin-left: 4px;"></i>
+          </button>
+          <div class="lang-dropdown">
+            <button class="lang-option active" data-lang="en">English</button>
+            <button class="lang-option" data-lang="fr">Français</button>
+            <button class="lang-option" data-lang="es">Español</button>
           </div>
         </div>
+        <button id="theme-toggle" class="btn-icon toggle" title="Toggle theme">
+          <i class="fas fa-sun"></i>
+        </button>
+      </div>
+    </nav>
+  </header>
 
-        <!-- Right Section - Photo Frame -->
-        <div class="hero-right">
-          <div class="photo-frame">
-            <img src="https://avatars.githubusercontent.com/u/85189668?v=4" alt="Slim Agbahoungba" style="width:100%;height:100%;object-fit:cover;">
-            <div class="status-badge">
-              <span class="pulse-dot"></span>
-              <span>Open to Collaboration</span>
-            </div>
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <img src="https://avatars.githubusercontent.com/u/85189668?v=4" alt="Slim Zéférino S. AGBAHOUNGBA" class="hero-avatar">
+        
+        <h1>
+          <span data-i18n="hero.title">Slim Zéférino S.</span>
+          <span class="hero-title" data-i18n="hero.title">AGBAHOUNGBA</span>
+        </h1>
+        
+        <p class="hero-subtitle" data-i18n="hero.subtitle">Biostatisticien Clinique — Data Scientist — PhD Candidate</p>
+        
+        <p class="hero-description" data-i18n="hero.tagline">Integrating Statistical Rigor with Machine Learning Innovation for Healthcare & Development Data</p>
+        
+        <div class="hero-cta">
+          <a href="portfolio.html" class="btn btn-primary">
+            <i class="fas fa-briefcase"></i>
+            <span data-i18n="hero.cta.portfolio">View Portfolio</span>
+          </a>
+          <a href="contact.html" class="btn btn-secondary">
+            <i class="fas fa-envelope"></i>
+            <span data-i18n="hero.cta.contact">Get in Touch</span>
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-number" data-i18n="hero.stat1">4+</div>
+            <div class="stat-label" data-i18n="hero.stat1.label">Years Experience</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" data-i18n="hero.stat2">3+</div>
+            <div class="stat-label" data-i18n="hero.stat2.label">Publications</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" data-i18n="hero.stat3">6+</div>
+            <div class="stat-label" data-i18n="hero.stat3.label">Certifications</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" data-i18n="hero.stat4">10+</div>
+            <div class="stat-label" data-i18n="hero.stat4.label">Projects</div>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- Stats Bar -->
-      <div class="stats-bar">
-        <div class="stat-item">
-          <div class="stat-number" data-count="3" data-suffix="+">3</div>
-          <div class="stat-label">Years Experience</div>
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>About Me</h2>
+          <p class="section-subtitle">Combining rigorous biostatistics with cutting-edge machine learning to solve complex healthcare and development challenges</p>
         </div>
-        <div class="stat-item">
-          <div class="stat-number" data-count="2" data-suffix="">2</div>
-          <div class="stat-label">Publications</div>
+
+        <div class="grid grid-3">
+          <div class="card">
+            <h3><i class="fas fa-flask" style="color: var(--accent-primary); margin-right: 8px;"></i> Research</h3>
+            <p>PhD candidate in AI & Epidemiology at École Polytechnique de Thiès, focusing on agricultural yield prediction and disease surveillance using integrated statistical and ML models.</p>
+          </div>
+
+          <div class="card">
+            <h3><i class="fas fa-chart-line" style="color: var(--accent-secondary); margin-right: 8px;"></i> Analytics</h3>
+            <p>Clinical biostatistician specializing in advanced statistical modeling, causal inference (PSM, DID), survival analysis, and spatio-temporal analytics for health data.</p>
+          </div>
+
+          <div class="card">
+            <h3><i class="fas fa-code" style="color: var(--accent-tertiary); margin-right: 8px;"></i> Engineering</h3>
+            <p>Full-stack data engineer proficient in R, Python, SQL, cloud platforms (Snowflake, BigQuery, Databricks), ETL pipelines, and MLOps deployment strategies.</p>
+          </div>
         </div>
-        <div class="stat-item">
-          <div class="stat-number" data-count="5" data-suffix="">5</div>
-          <div class="stat-label">Certifications</div>
+      </div>
+    </section>
+
+    <section class="section" style="background: var(--surface-secondary);">
+      <div class="container">
+        <div class="section-header">
+          <h2>Core Competencies</h2>
+          <p class="section-subtitle">Technical expertise across statistics, data science, and engineering</p>
         </div>
-        <div class="stat-item">
-          <div class="stat-number" data-count="8" data-suffix="+">8</div>
-          <div class="stat-label">Projects</div>
+
+        <div class="grid grid-4">
+          <div class="card">
+            <h4><i class="fas fa-flask-vial"></i> Biostatistics</h4>
+            <p>Regression models, survival analysis, PSM, DID, spatio-temporal modeling, epidemiological analysis</p>
+          </div>
+          <div class="card">
+            <h4><i class="fas fa-brain"></i> Machine Learning</h4>
+            <p>LSTM, CNN, NLP, anomaly detection, predictive modeling, model validation & optimization</p>
+          </div>
+          <div class="card">
+            <h4><i class="fas fa-server"></i> Data Engineering</h4>
+            <p>ETL/ELT, Apache Spark, Airflow, dbt, REST APIs, GraphQL, cloud data warehousing</p>
+          </div>
+          <div class="card">
+            <h4><i class="fas fa-code"></i> Programming</h4>
+            <p>R (advanced), Python (pandas, scikit-learn), Stata, SQL, SPSS, Git/Docker</p>
+          </div>
+          <div class="card">
+            <h4><i class="fas fa-chart-bar"></i> Business Intelligence</h4>
+            <p>Power BI, Tableau, R Shiny, Qlik, DAX, interactive dashboards & data storytelling</p>
+          </div>
+          <div class="card">
+            <h4><i class="fas fa-cloud"></i> Cloud & DevOps</h4>
+            <p>Snowflake, Databricks, Azure Synapse, Google BigQuery, Docker, GitHub CI/CD</p>
+          </div>
+          <div class="card">
+            <h4><i class="fas fa-graduation-cap"></i> Research</h4>
+            <p>Paper writing, statistical inference, study design, peer review, open science</p>
+          </div>
+          <div class="card">
+            <h4><i class="fas fa-handshake"></i> Consulting</h4>
+            <p>Strategic planning, capacity building, training delivery, stakeholder engagement</p>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
   <footer>
-    <div class="footer-inner">
-      <div class="footer-col">
-        <h4>Slim Agbahoungba</h4>
-        <p>AI & Data Scientist<br>PhD Candidate in Intelligent Systems<br>École Polytechnique de Thiès</p>
+    <div class="footer-content">
+      <div class="footer-main">
+        <div class="footer-section">
+          <h3 data-i18n="footer.sitemap">Sitemap</h3>
+          <div class="footer-links">
+            <a href="index.html" class="footer-link" data-i18n="nav.home">Home</a>
+            <a href="portfolio.html" class="footer-link" data-i18n="nav.portfolio">Portfolio</a>
+            <a href="publications.html" class="footer-link" data-i18n="nav.publications">Publications</a>
+            <a href="cv.html" class="footer-link" data-i18n="nav.cv">CV</a>
+            <a href="contact.html" class="footer-link" data-i18n="nav.contact">Contact</a>
+            <a href="faq.html" class="footer-link" data-i18n="nav.faq">FAQ</a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3 data-i18n="footer.connect">Connect</h3>
+          <div class="footer-links">
+            <a href="https://www.linkedin.com/in/zeferino-agb/" class="footer-link" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <a href="https://github.com/slimagb" class="footer-link" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://scholar.google.com/" class="footer-link" target="_blank" rel="noopener"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3 data-i18n="footer.follow">Follow</h3>
+          <div class="footer-social">
+            <a href="https://www.linkedin.com/in/zeferino-agb/" class="social-link" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/slimagb" class="social-link" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://scholar.google.com/" class="social-link" target="_blank" rel="noopener" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+          </div>
+        </div>
       </div>
-      <div class="footer-col">
-        <h4>Navigation</h4>
-        <a href="index.html">Home</a>
-        <a href="works.html">Works</a>
-        <a href="events.html">Events</a>
-        <a href="cv.html">CV</a>
-        <a href="faq.html">FAQ</a>
-      </div>
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <a href="mailto:zeferinoslim1@gmail.com"><i class="fas fa-envelope"></i> zeferinoslim1@gmail.com</a>
-        <a href="https://www.linkedin.com/in/zeferino-agb/" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
-        <a href="https://github.com/slimagb" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>&copy; 2026 Slim Zéférino S. Agbahoungba</span>
-      <div class="footer-socials">
-        <a href="https://scholar.google.com/" target="_blank"><i class="fas fa-graduation-cap"></i></a>
-        <a href="https://www.linkedin.com/in/zeferino-agb/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://github.com/slimagb" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="mailto:zeferinoslim1@gmail.com"><i class="fas fa-envelope"></i></a>
+      <div class="footer-bottom">
+        <div class="footer-credits" data-i18n="footer.credits">Designed & Built by Slim Zéférino S. AGBAHOUNGBA | Data Science Portfolio</div>
+        <div style="color: var(--text-secondary); font-size: 0.85rem;">
+          <span id="footer-year"></span> © All Rights Reserved
+        </div>
       </div>
     </div>
   </footer>
 
-  <!-- Scroll to Top Button -->
-  <button class="scroll-top" id="scrollTop"><i class="fas fa-arrow-up"></i></button>
-
-  <!-- Main JavaScript -->
+  <script src="assets/js/i18n.js"></script>
   <script src="assets/js/main.js"></script>
+  <script>
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+    document.getElementById('current-lang').textContent = i18n.currentLang.toUpperCase();
+  </script>
 </body>
 </html>
